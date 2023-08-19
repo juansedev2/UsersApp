@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>3</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>69</x>
+      <y>183</y>
+      <w>159</w>
+      <h>57</h>
+    </coordinates>
+    <panel_attributes>DBConnection
+Package::core/database
+--
+_+tryConnection(config: Array): PDO(objetc)_
+--
+Responsibilities
+-- Try the conecction with the database and return that connection
+-- If the connection couldn't be possible, 
+then catch the error and return false</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>312</y>
+      <w>234</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>QueryBuilder
+Package::core/database
+--
+- connection: PDO(objetc)
+--
++ Database(PDO(interface): connection)
++ createOne(table_name: String, properties: Array): bool
++ selectAll(table_name: String): Array | null
++ selectOne(table_name: String, primary_key: String): Array | null
++ updateOne(table_name: String, primary_key: String, id_register: String, properties: Array): bool
++ deleteOne(table_name: String, primary_key: String, id_register: String): bool
+--
+Responsibilities
+-- It will be the interface of the operations between the models and the database
+of a generic form (usual operations how CRUD)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>630</x>
+      <y>315</y>
+      <w>219</w>
+      <h>138</h>
+    </coordinates>
+    <panel_attributes>Model
+Package::models/Model
+--
+_#string: table_name_
+_#string: primary_key_
+_#Array: properties_
+--
++ Model(properties: Array)
++ get(string: propiedad): mixed
++ set(string: propiedad): void
++ updateProperties(properties: Array): void
+_+ create(properties: Array): static_
+_+ selectOne(id: String): static_
+_+ selectOneBy(properties: Array): static_
+_+ selectAll(): void_
++ save(properties: Array): bool
++ findOne(id: string): bool
++ findOneBy(properties: Array): bool
++ update(properties: Array): static | bool
++ delete(properties: Array): static | bool
+--
+Responsibilities
+-- It must contain the common properties of the models
+-- It must be an abstraccion of common operations of the models with the database</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>342</x>
+      <y>312</y>
+      <w>213</w>
+      <h>57</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;DependencyInjector&gt;&gt;
+Injector
+Package::core
+--
+- dependencies: Array
+--
+_+set(dependency_name: string, value: mixed)_
+_+get(dependency_name: string)_
+--
+Responsibilities
+-- It must store and return the dependencies that other classes or parts of the app need </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>225</x>
+      <y>186</y>
+      <w>123</w>
+      <h>141</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;390.0;450.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>231</x>
+      <y>318</y>
+      <w>117</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;370.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>552</x>
+      <y>321</y>
+      <w>84</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;260.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>546</x>
+      <y>285</y>
+      <w>108</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>Model needs the QueryBuilder dependency</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>627</x>
+      <y>486</y>
+      <w>222</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>User
+Package::models/User
+--
+_#string: table_name_
+_#string: primary_key_
+--
++ User(properties: Array)
+_+ queryUser(email_user: string, password: string): bool_
+--
+Responsibilities
+-- It must define the properties of table_name and  primary_key to interact with the database
+-- It must create their own methods for unique actions with the database</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>732</x>
+      <y>450</y>
+      <w>9</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>180</x>
+      <y>291</y>
+      <w>120</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>QueryBuilder needs the Connection dependency</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>933</x>
+      <y>219</y>
+      <w>171</w>
+      <h>51</h>
+    </coordinates>
+    <panel_attributes>BaseController
+Package::controllers/BaseController
+--
++ Controller()
+# returnView(name: string, params: Array): void
+# redirect(route: string): void
+--
+Responsibilities
+-- It should be an abstraction of common actions of all of the controllers</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1155</x>
+      <y>423</y>
+      <w>141</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>UserController
+Package::controllers/UserController
+--
++ UserController()
++ createUser(): void
++ queryAllUsers(): void 
++ queryOneUser(): void
++ updateUser(): void
++ deleteUser(): void
+--
+Responsibilities
+-- Make all CRUD operations with the users of the system</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>948</x>
+      <y>537</y>
+      <w>144</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>SessionController
+Package::controllers/SessionController
+--
++ SessionController()
++ tryLogin(email_user: string, user_password: string): void
++ validateSession(): void
++ validateRol(): void
++ closeSession(): void
+--
+Responsibilities
+-- Check the rol of the client to present their corresponding views
+-- Validate if the session is active or no
+-- Check the try of login and it will be succesful or no
+-- Close the session when the client leaves his session</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1017</x>
+      <y>267</y>
+      <w>9</w>
+      <h>276</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;900.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1143</x>
+      <y>537</y>
+      <w>225</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Helper&gt;&gt;
+Authenticator
+Package::core/helpers/Authenticator
+--
++alert_credentials: bool_
++alert_session: bool_
+--
++ Authenticator()
++ createSession(id_user: string, name_user: string, email_user: string, rol_user: admin): void
++ validateSession(): bool
++ deleteSession(): void
+- startSession(): void
+--
+Responsibilities
+-- Verify that the client has the session active and can get in the app
+-- Check if the client does not have a session active and warn of it to block access
+-- Create, verify and delete the session</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1089</x>
+      <y>540</y>
+      <w>60</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>180.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>846</x>
+      <y>489</y>
+      <w>108</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;340.0;240.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1020</x>
+      <y>267</y>
+      <w>186</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;600.0;520.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>846</x>
+      <y>429</y>
+      <w>315</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;200.0;1030.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>552</x>
+      <y>321</y>
+      <w>81</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;250.0;580.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>867</x>
+      <y>414</y>
+      <w>147</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>The dependencies will be use with the InyectorDependency</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1089</x>
+      <y>426</y>
+      <w>72</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;380.0;220.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1299</x>
+      <y>378</y>
+      <w>186</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>StaticController
+Package::controllers/StaticController
+--
++ show404(): void
+--
+Responsibilities
+-- Return all of the static views (withouth interaction with models to get data)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1026</x>
+      <y>267</y>
+      <w>378</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;1240.0;370.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1755</x>
+      <y>477</y>
+      <w>138</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Handler
+Package::core/router/Handler
+--
+Handler():
++ getURL(): string
+--
+Responsibilities
+-- Return the URL of the request of the client by the URL</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1554</x>
+      <y>477</y>
+      <w>150</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>Router
+Package::core/router/Router
+--
+- routes: Array
+--
++ Router(routes: Array)
++ manageRequest(url: string)
+--
+Responsibilities
+-- Take the URL and return the resource of the client needs
+-- Centralize requests to control the requested resources
+-- Instantiate the controller corresponding to the request</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1701</x>
+      <y>498</y>
+      <w>60</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;180.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1365</x>
+      <y>507</y>
+      <w>195</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;140.0;630.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1293</x>
+      <y>429</y>
+      <w>267</w>
+      <h>87</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;870.0;270.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1482</x>
+      <y>384</y>
+      <w>78</w>
+      <h>129</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;240.0;410.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>639</x>
+      <y>594</y>
+      <w>201</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Security&gt;&gt;
+Package::core/security/Encryptor
+--
+- COST: int
+--
+_+ EncryptPassword(password: string): string_
+_+ comparePasswords(literal_password: string, encrypted_password: string) : bool_
+--
+Responsibilities
+-- Define the cost of the encryption by securtiy of the passwords
+-- Do encryption of the passwords
+-- Compare passwords (literal and the encrypted)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>837</x>
+      <y>558</y>
+      <w>117</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;220.0;370.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>627</x>
+      <y>546</y>
+      <w>18</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>40.0;180.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
