@@ -5,10 +5,12 @@
 require_once "./core/testing/Functions.php";
 require_once "./core/Injector.php";
 require_once "./core/database/DBConnection.php";
+require_once "./core/database/QueryBuilder.php";
 
 Injector::set("config", require_once "./core/config/Config.php");
+Injector::set("DBConnection", new QueryBuilder(DBConecction::tryConnection(Injector::get("config")["database"])));
 
-// Define the status of the app in production for show the errors
+// Define the status of the app in production for show the errors|
 if(Injector::get("config")["production"]){
     ini_set('error_reporting', E_ALL | E_NOTICE | E_STRICT);
     ini_set('display_errors', '0');
@@ -16,5 +18,3 @@ if(Injector::get("config")["production"]){
 }else{
     ini_set('display_errors', '1');
 }
-
-DBConecction::tryConnection(Injector::get("config")["database"]);
