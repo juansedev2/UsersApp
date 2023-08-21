@@ -37,4 +37,4 @@ Mes: Agosto
 	16  => Continuación de diagrama de clases y su finalización e inicio de diagramas MER (Modelo Entidad Relacion) Y MR (Modelo Relacional).
 	17  => Continuación y finalización de diagrmas MER Y MR.
 	18  => Diseño de mapa de navegación y mockups.
-	22  => Inicio del desarrollo de la aplicación (creación de base de datos y backend)
+	20  => Inicio del desarrollo de la aplicación (creación de base de datos y poblado)
