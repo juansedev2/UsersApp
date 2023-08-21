@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>3</zoom_level>
+  <zoom_level>9</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>69</x>
-      <y>183</y>
-      <w>159</w>
-      <h>57</h>
+      <x>207</x>
+      <y>0</y>
+      <w>477</w>
+      <h>171</h>
     </coordinates>
     <panel_attributes>DBConnection
 Package::core/database
@@ -24,9 +24,9 @@ then catch the error and return false</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>312</y>
-      <w>234</w>
-      <h>81</h>
+      <y>387</y>
+      <w>702</w>
+      <h>243</h>
     </coordinates>
     <panel_attributes>QueryBuilder
 Package::core/database
@@ -48,10 +48,10 @@ of a generic form (usual operations how CRUD)</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>630</x>
-      <y>315</y>
-      <w>219</w>
-      <h>138</h>
+      <x>1890</x>
+      <y>396</y>
+      <w>657</w>
+      <h>414</h>
     </coordinates>
     <panel_attributes>Model
 Package::models/Model
@@ -82,16 +82,16 @@ Responsibilities
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>342</x>
-      <y>312</y>
-      <w>213</w>
-      <h>57</h>
+      <x>1026</x>
+      <y>387</y>
+      <w>639</w>
+      <h>171</h>
     </coordinates>
     <panel_attributes>&lt;&lt;DependencyInjector&gt;&gt;
 Injector
 Package::core
 --
-- dependencies: Array
+_# dependencies: Array_
 --
 _+set(dependency_name: string, value: mixed)_
 _+get(dependency_name: string)_
@@ -103,10 +103,10 @@ Responsibilities
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>225</x>
-      <y>186</y>
-      <w>123</w>
-      <h>141</h>
+      <x>675</x>
+      <y>9</y>
+      <w>369</w>
+      <h>423</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;390.0;450.0</additional_attributes>
@@ -114,10 +114,10 @@ Responsibilities
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>231</x>
-      <y>318</y>
-      <w>117</w>
-      <h>9</h>
+      <x>693</x>
+      <y>405</y>
+      <w>351</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;370.0;10.0</additional_attributes>
@@ -125,10 +125,10 @@ Responsibilities
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>552</x>
-      <y>321</y>
-      <w>84</w>
-      <h>9</h>
+      <x>1656</x>
+      <y>414</y>
+      <w>252</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;260.0;10.0</additional_attributes>
@@ -136,10 +136,10 @@ Responsibilities
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>546</x>
-      <y>285</y>
-      <w>108</w>
-      <h>15</h>
+      <x>1638</x>
+      <y>306</y>
+      <w>324</w>
+      <h>45</h>
     </coordinates>
     <panel_attributes>Model needs the QueryBuilder dependency</panel_attributes>
     <additional_attributes/>
@@ -147,10 +147,10 @@ Responsibilities
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>627</x>
-      <y>486</y>
-      <w>222</w>
-      <h>63</h>
+      <x>1881</x>
+      <y>909</y>
+      <w>666</w>
+      <h>189</h>
     </coordinates>
     <panel_attributes>User
 Package::models/User
@@ -169,10 +169,10 @@ Responsibilities
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>732</x>
-      <y>450</y>
-      <w>9</w>
-      <h>42</h>
+      <x>2196</x>
+      <y>801</y>
+      <w>27</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
@@ -180,10 +180,10 @@ Responsibilities
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>180</x>
-      <y>291</y>
-      <w>120</w>
-      <h>15</h>
+      <x>540</x>
+      <y>324</y>
+      <w>360</w>
+      <h>45</h>
     </coordinates>
     <panel_attributes>QueryBuilder needs the Connection dependency</panel_attributes>
     <additional_attributes/>
@@ -191,10 +191,10 @@ Responsibilities
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>933</x>
-      <y>219</y>
-      <w>171</w>
-      <h>51</h>
+      <x>2799</x>
+      <y>108</y>
+      <w>513</w>
+      <h>153</h>
     </coordinates>
     <panel_attributes>BaseController
 Package::controllers/BaseController
@@ -210,10 +210,10 @@ Responsibilities
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1155</x>
-      <y>423</y>
-      <w>141</w>
-      <h>78</h>
+      <x>3465</x>
+      <y>720</y>
+      <w>423</w>
+      <h>234</h>
     </coordinates>
     <panel_attributes>UserController
 Package::controllers/UserController
@@ -232,10 +232,10 @@ Responsibilities
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>948</x>
-      <y>537</y>
-      <w>144</w>
-      <h>78</h>
+      <x>2844</x>
+      <y>1062</y>
+      <w>432</w>
+      <h>234</h>
     </coordinates>
     <panel_attributes>SessionController
 Package::controllers/SessionController
@@ -256,10 +256,10 @@ Responsibilities
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1017</x>
-      <y>267</y>
-      <w>9</w>
-      <h>276</h>
+      <x>3051</x>
+      <y>252</y>
+      <w>27</w>
+      <h>828</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;900.0</additional_attributes>
@@ -267,10 +267,10 @@ Responsibilities
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1143</x>
-      <y>537</y>
-      <w>225</w>
-      <h>99</h>
+      <x>3429</x>
+      <y>1062</y>
+      <w>675</w>
+      <h>297</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Helper&gt;&gt;
 Authenticator
@@ -294,10 +294,10 @@ Responsibilities
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1089</x>
-      <y>540</y>
-      <w>60</w>
-      <h>9</h>
+      <x>3267</x>
+      <y>1071</y>
+      <w>180</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>180.0;10.0;10.0;10.0</additional_attributes>
@@ -305,10 +305,10 @@ Responsibilities
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>846</x>
-      <y>489</y>
-      <w>108</w>
-      <h>78</h>
+      <x>2538</x>
+      <y>918</y>
+      <w>324</w>
+      <h>234</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;340.0;240.0</additional_attributes>
@@ -316,10 +316,10 @@ Responsibilities
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1020</x>
-      <y>267</y>
-      <w>186</w>
-      <h>162</h>
+      <x>3060</x>
+      <y>252</y>
+      <w>558</w>
+      <h>486</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;600.0;520.0</additional_attributes>
@@ -327,10 +327,10 @@ Responsibilities
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>846</x>
-      <y>429</y>
-      <w>315</w>
-      <h>66</h>
+      <x>2538</x>
+      <y>738</y>
+      <w>945</w>
+      <h>198</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;200.0;1030.0;10.0</additional_attributes>
@@ -338,10 +338,10 @@ Responsibilities
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>552</x>
-      <y>321</y>
-      <w>81</w>
-      <h>180</h>
+      <x>1656</x>
+      <y>414</y>
+      <w>243</w>
+      <h>540</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;250.0;580.0</additional_attributes>
@@ -349,10 +349,10 @@ Responsibilities
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>867</x>
-      <y>414</y>
-      <w>147</w>
-      <h>15</h>
+      <x>2601</x>
+      <y>693</y>
+      <w>441</w>
+      <h>45</h>
     </coordinates>
     <panel_attributes>The dependencies will be use with the InyectorDependency</panel_attributes>
     <additional_attributes/>
@@ -360,10 +360,10 @@ Responsibilities
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1089</x>
-      <y>426</y>
-      <w>72</w>
-      <h>120</h>
+      <x>3267</x>
+      <y>729</y>
+      <w>216</w>
+      <h>360</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;380.0;220.0;10.0</additional_attributes>
@@ -371,10 +371,10 @@ Responsibilities
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1299</x>
-      <y>378</y>
-      <w>186</w>
-      <h>42</h>
+      <x>3897</x>
+      <y>585</y>
+      <w>558</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>StaticController
 Package::controllers/StaticController
@@ -388,10 +388,10 @@ Responsibilities
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1026</x>
-      <y>267</y>
-      <w>378</w>
-      <h>117</h>
+      <x>3078</x>
+      <y>252</y>
+      <w>1134</w>
+      <h>351</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;1240.0;370.0</additional_attributes>
@@ -399,10 +399,10 @@ Responsibilities
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1755</x>
-      <y>477</y>
-      <w>138</w>
-      <h>48</h>
+      <x>5265</x>
+      <y>882</y>
+      <w>414</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>Handler
 Package::core/router/Handler
@@ -417,10 +417,10 @@ Responsibilities
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1554</x>
-      <y>477</y>
-      <w>150</w>
-      <h>66</h>
+      <x>4662</x>
+      <y>882</y>
+      <w>450</w>
+      <h>198</h>
     </coordinates>
     <panel_attributes>Router
 Package::core/router/Router
@@ -439,10 +439,10 @@ Responsibilities
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1701</x>
-      <y>498</y>
-      <w>60</w>
-      <h>9</h>
+      <x>5103</x>
+      <y>945</y>
+      <w>180</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;180.0;10.0</additional_attributes>
@@ -450,10 +450,10 @@ Responsibilities
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1365</x>
-      <y>507</y>
-      <w>195</w>
-      <h>48</h>
+      <x>4095</x>
+      <y>972</y>
+      <w>585</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;140.0;630.0;10.0</additional_attributes>
@@ -461,10 +461,10 @@ Responsibilities
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1293</x>
-      <y>429</y>
-      <w>267</w>
-      <h>87</h>
+      <x>3879</x>
+      <y>738</y>
+      <w>801</w>
+      <h>261</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;870.0;270.0</additional_attributes>
@@ -472,10 +472,10 @@ Responsibilities
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1482</x>
-      <y>384</y>
-      <w>78</w>
-      <h>129</h>
+      <x>4446</x>
+      <y>603</y>
+      <w>234</w>
+      <h>387</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;240.0;410.0</additional_attributes>
@@ -483,10 +483,10 @@ Responsibilities
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>639</x>
-      <y>594</y>
-      <w>201</w>
-      <h>63</h>
+      <x>1917</x>
+      <y>1233</y>
+      <w>603</w>
+      <h>189</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Security&gt;&gt;
 Package::core/security/Encryptor
@@ -505,10 +505,10 @@ Responsibilities
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>837</x>
-      <y>558</y>
-      <w>117</w>
-      <h>72</h>
+      <x>2511</x>
+      <y>1125</y>
+      <w>351</w>
+      <h>216</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;220.0;370.0;10.0</additional_attributes>
@@ -516,10 +516,10 @@ Responsibilities
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>627</x>
-      <y>546</y>
-      <w>18</w>
-      <h>60</h>
+      <x>1881</x>
+      <y>1089</y>
+      <w>54</w>
+      <h>180</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>40.0;180.0;10.0;10.0</additional_attributes>
