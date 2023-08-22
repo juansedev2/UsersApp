@@ -39,7 +39,7 @@ Package::core/database
 + selectOne(table_name: String, primary_key: String): Array | null
 + updateOne(table_name: String, primary_key: String, id_register: String, properties: Array): bool
 + deleteOne(table_name: String, primary_key: String, id_register: String): bool
-+ ownQuery(query: String, values: Array)
++ ownQuery(query: String, values: Array): bool | Array
 --
 Responsibilities
 -- It will be the interface of the operations between the models and the database
