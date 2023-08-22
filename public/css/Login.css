@@ -1,0 +1,35 @@
+:root{
+    --borde-form-login: black;
+    --borde-input: black;
+}
+section#login_section{
+    width: 100%;
+    height: auto;
+}
+form{
+    width: 500px;
+    margin: 100px auto;
+    border: 1px solid var(--borde-form-login);
+    border-radius: 10px;
+    padding: 40px;
+}
+form > h1{
+    text-align: center;
+}
+div.credentials{
+    margin: 30px 0;
+}
+div.credentials input{
+    width: 100%;
+    margin: 10px 0;
+    height: 30px;
+    border-radius: 4px;
+}
+div.button{
+    text-align: center;
+}
+div.button button{
+    font-size: 1.1rem;
+    padding: 5px;
+    letter-spacing: 1px;
+}

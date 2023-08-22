@@ -7,6 +7,7 @@
     <title>UsersApp</title>
     <link rel="stylesheet" href="/public/css/Normalize.css">
     <link rel="stylesheet" href="/public/css/Landing.css">
+    <link rel="stylesheet" href="/public/css/NavMenu.css">
 </head>
 <body>
     <?php require "./public/partials/NavMenu.html"?>
