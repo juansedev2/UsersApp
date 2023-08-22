@@ -92,7 +92,47 @@ class QueryBuilder{
             $result = false;
         }
         return $result;
-        
+    }
+
+    public function ownQuery(string $query, Array $values): Array | bool{
+
+        if(empty($values)){
+            return throw new Exception("NO SE ACEPTAN ARREGLOS VACIOS COMO VALORES en la función ownQuery de la clase QueryBuilder", 1);
+        }
+        if(empty($query)){
+            return throw new Exception("NO SE ACEPTAN CONSULTAS VACIAS en la función ownQuery de la clase QueryBuilder", 1);
+        }
+        if(!str_contains($query, "?")){
+            return throw new Exception("NO SE ACEPTAN CONSULTAS SIN COMODINES en la función ownQuery de la clase QueryBuilder", 1);
+        }
+
+        $getModels = false;
+
+        if(str_contains($query, "SELECT")){
+            $getModels = true;
+        }
+
+        $result = null;
+
+        try {
+
+            $query = $this->connection->prepare($query);
+            $query->execute($values);
+            
+            if($getModels){
+                $result = $query->fetchAll(PDO::FETCH_ASSOC); // Return how a associative array   
+            }else{
+                $result = true;
+            }
+
+            $query->closeCursor();
+
+        } catch (PDOException $error) {
+            echo $error;
+            $result = false;
+        }
+        return $result;
+
     }
 
 }
