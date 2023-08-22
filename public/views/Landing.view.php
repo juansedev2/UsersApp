@@ -4,18 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="juansedev2">
-    <title>Document</title>
+    <title>UsersApp</title>
     <link rel="stylesheet" href="/public/css/Normalize.css">
     <link rel="stylesheet" href="/public/css/Landing.css">
 </head>
 <body>
-    <nav id="navigate_section">
-        <ul class="navigate_menu">
-            <li><a href="login">Iniciar sesión</a></li>
-            <li><a href="registro">Registrarse</a></li>
-            <li><a href="acerca">Acerca de</a></li>
-        </ul>
-    </nav>
+    <?php require "./public/partials/NavMenu.html"?>
     <section id="welcome_section">
         <div id="welcome_box">
             <div class="welcome_message">

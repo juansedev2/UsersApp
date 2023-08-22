@@ -1,40 +1,6 @@
 :root{
     --menu-elements: rgb(77, 77, 77);
 }
-nav{
-    width: 100%;
-    height: auto;
-    margin: 20px 0;
-}
-ul{
-    display: flex;
-    flex-direction: row-reverse;
-    flex-wrap: wrap;
-}
-ul > li{
-    display: inline-block;
-    margin: 0 20px;
-    padding: 10px;
-    border: 1px solid white;
-}
-ul > li:hover{
-    border-color: black;
-}
-/*Order the child elments by position (right to left)*/
-ul > li:nth-child(1){
-    order: 3;
-}
-ul > li:nth-child(2){
-    order: 2;
-}
-ul > li:nth-child(3){
-    order: 1;
-}
-ul > li a{
-    text-decoration: none;
-    color: var(--menu-elements);
-    font-size: 1.5rem;
-}
 section#welcome_section{
     width: 100%;
     margin: 60px 0;
