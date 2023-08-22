@@ -10,15 +10,15 @@ class Router{
 
         if (array_key_exists($url, $this->routes)) {
 
-            $controller = $this->routes["url"][0];
-            $method = $this->routes["url"][1];
+            $controller = $this->routes["$url"][0];
+            $method = $this->routes["$url"][1];
 
             if(!class_exists($controller)){
                 throw new Exception("CONTROLADOR {$controller} NO EXISTE", 1);
             }else if(!method_exists($controller, $method)){
                 throw new Exception("CONTROLADOR {$controller} NO EXISTE", 1);
             }else{
-                return (new $controller)->$method;
+                return (new $controller)->$method();
             }
             
         }
