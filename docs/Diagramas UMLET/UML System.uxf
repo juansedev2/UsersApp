@@ -5,7 +5,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>207</x>
-      <y>108</y>
+      <y>0</y>
       <w>477</w>
       <h>171</h>
     </coordinates>
@@ -24,7 +24,7 @@ then catch the error and return false</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>495</y>
+      <y>387</y>
       <w>702</w>
       <h>270</h>
     </coordinates>
@@ -50,7 +50,7 @@ of a generic form (usual operations how CRUD)</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1890</x>
-      <y>504</y>
+      <y>396</y>
       <w>657</w>
       <h>414</h>
     </coordinates>
@@ -84,7 +84,7 @@ Responsibilities
     <id>UMLClass</id>
     <coordinates>
       <x>1026</x>
-      <y>495</y>
+      <y>387</y>
       <w>639</w>
       <h>171</h>
     </coordinates>
@@ -105,7 +105,7 @@ Responsibilities
     <id>Relation</id>
     <coordinates>
       <x>675</x>
-      <y>117</y>
+      <y>9</y>
       <w>369</w>
       <h>423</h>
     </coordinates>
@@ -116,7 +116,7 @@ Responsibilities
     <id>Relation</id>
     <coordinates>
       <x>693</x>
-      <y>513</y>
+      <y>405</y>
       <w>351</w>
       <h>27</h>
     </coordinates>
@@ -127,7 +127,7 @@ Responsibilities
     <id>Relation</id>
     <coordinates>
       <x>1656</x>
-      <y>522</y>
+      <y>414</y>
       <w>252</w>
       <h>27</h>
     </coordinates>
@@ -138,7 +138,7 @@ Responsibilities
     <id>UMLNote</id>
     <coordinates>
       <x>1638</x>
-      <y>414</y>
+      <y>306</y>
       <w>324</w>
       <h>45</h>
     </coordinates>
@@ -149,7 +149,7 @@ Responsibilities
     <id>UMLClass</id>
     <coordinates>
       <x>1881</x>
-      <y>1017</y>
+      <y>909</y>
       <w>666</w>
       <h>189</h>
     </coordinates>
@@ -171,7 +171,7 @@ Responsibilities
     <id>Relation</id>
     <coordinates>
       <x>2196</x>
-      <y>909</y>
+      <y>801</y>
       <w>27</w>
       <h>126</h>
     </coordinates>
@@ -182,7 +182,7 @@ Responsibilities
     <id>UMLNote</id>
     <coordinates>
       <x>540</x>
-      <y>432</y>
+      <y>324</y>
       <w>360</w>
       <h>45</h>
     </coordinates>
@@ -193,7 +193,7 @@ Responsibilities
     <id>UMLClass</id>
     <coordinates>
       <x>2799</x>
-      <y>216</y>
+      <y>108</y>
       <w>513</w>
       <h>153</h>
     </coordinates>
@@ -212,7 +212,7 @@ Responsibilities
     <id>UMLClass</id>
     <coordinates>
       <x>3465</x>
-      <y>828</y>
+      <y>720</y>
       <w>423</w>
       <h>234</h>
     </coordinates>
@@ -234,7 +234,7 @@ Responsibilities
     <id>UMLClass</id>
     <coordinates>
       <x>2844</x>
-      <y>1170</y>
+      <y>1062</y>
       <w>432</w>
       <h>234</h>
     </coordinates>
@@ -258,7 +258,7 @@ Responsibilities
     <id>Relation</id>
     <coordinates>
       <x>3051</x>
-      <y>360</y>
+      <y>252</y>
       <w>27</w>
       <h>828</h>
     </coordinates>
@@ -269,7 +269,7 @@ Responsibilities
     <id>UMLClass</id>
     <coordinates>
       <x>3429</x>
-      <y>1170</y>
+      <y>1062</y>
       <w>675</w>
       <h>297</h>
     </coordinates>
@@ -296,7 +296,7 @@ Responsibilities
     <id>Relation</id>
     <coordinates>
       <x>3267</x>
-      <y>1179</y>
+      <y>1071</y>
       <w>180</w>
       <h>27</h>
     </coordinates>
@@ -307,7 +307,7 @@ Responsibilities
     <id>Relation</id>
     <coordinates>
       <x>2538</x>
-      <y>1026</y>
+      <y>918</y>
       <w>324</w>
       <h>234</h>
     </coordinates>
@@ -318,7 +318,7 @@ Responsibilities
     <id>Relation</id>
     <coordinates>
       <x>3060</x>
-      <y>360</y>
+      <y>252</y>
       <w>558</w>
       <h>486</h>
     </coordinates>
@@ -329,7 +329,7 @@ Responsibilities
     <id>Relation</id>
     <coordinates>
       <x>2538</x>
-      <y>846</y>
+      <y>738</y>
       <w>945</w>
       <h>198</h>
     </coordinates>
@@ -340,7 +340,7 @@ Responsibilities
     <id>Relation</id>
     <coordinates>
       <x>1656</x>
-      <y>522</y>
+      <y>414</y>
       <w>243</w>
       <h>540</h>
     </coordinates>
@@ -351,7 +351,7 @@ Responsibilities
     <id>UMLNote</id>
     <coordinates>
       <x>2601</x>
-      <y>801</y>
+      <y>693</y>
       <w>441</w>
       <h>45</h>
     </coordinates>
@@ -362,7 +362,7 @@ Responsibilities
     <id>Relation</id>
     <coordinates>
       <x>3267</x>
-      <y>837</y>
+      <y>729</y>
       <w>216</w>
       <h>360</h>
     </coordinates>
@@ -373,13 +373,14 @@ Responsibilities
     <id>UMLClass</id>
     <coordinates>
       <x>3897</x>
-      <y>693</y>
+      <y>585</y>
       <w>558</w>
       <h>126</h>
     </coordinates>
     <panel_attributes>StaticController
 Package::controllers/StaticController
 --
++ showLanding(): void
 + show404(): void
 --
 Responsibilities
@@ -390,7 +391,7 @@ Responsibilities
     <id>Relation</id>
     <coordinates>
       <x>3078</x>
-      <y>360</y>
+      <y>252</y>
       <w>1134</w>
       <h>351</h>
     </coordinates>
@@ -401,15 +402,14 @@ Responsibilities
     <id>UMLClass</id>
     <coordinates>
       <x>5265</x>
-      <y>990</y>
+      <y>882</y>
       <w>414</w>
       <h>144</h>
     </coordinates>
     <panel_attributes>Handler
 Package::core/router/Handler
 --
-Handler():
-+ getURL(): string
+_+ getURL(): string_
 --
 Responsibilities
 -- Return the URL of the request of the client by the URL</panel_attributes>
@@ -419,7 +419,7 @@ Responsibilities
     <id>UMLClass</id>
     <coordinates>
       <x>4662</x>
-      <y>990</y>
+      <y>882</y>
       <w>450</w>
       <h>198</h>
     </coordinates>
@@ -429,7 +429,7 @@ Package::core/router/Router
 - routes: Array
 --
 + Router(routes: Array)
-+ manageRequest(url: string)
++ treatRequest(url: string)
 --
 Responsibilities
 -- Take the URL and return the resource of the client needs
@@ -441,7 +441,7 @@ Responsibilities
     <id>Relation</id>
     <coordinates>
       <x>5103</x>
-      <y>1053</y>
+      <y>945</y>
       <w>180</w>
       <h>27</h>
     </coordinates>
@@ -452,7 +452,7 @@ Responsibilities
     <id>Relation</id>
     <coordinates>
       <x>4095</x>
-      <y>1080</y>
+      <y>972</y>
       <w>585</w>
       <h>144</h>
     </coordinates>
@@ -463,7 +463,7 @@ Responsibilities
     <id>Relation</id>
     <coordinates>
       <x>3879</x>
-      <y>846</y>
+      <y>738</y>
       <w>801</w>
       <h>261</h>
     </coordinates>
@@ -474,7 +474,7 @@ Responsibilities
     <id>Relation</id>
     <coordinates>
       <x>4446</x>
-      <y>711</y>
+      <y>603</y>
       <w>234</w>
       <h>387</h>
     </coordinates>
@@ -485,7 +485,7 @@ Responsibilities
     <id>UMLClass</id>
     <coordinates>
       <x>1917</x>
-      <y>1341</y>
+      <y>1233</y>
       <w>603</w>
       <h>189</h>
     </coordinates>
@@ -507,7 +507,7 @@ Responsibilities
     <id>Relation</id>
     <coordinates>
       <x>2511</x>
-      <y>1233</y>
+      <y>1125</y>
       <w>351</w>
       <h>216</h>
     </coordinates>
@@ -518,7 +518,7 @@ Responsibilities
     <id>Relation</id>
     <coordinates>
       <x>1881</x>
-      <y>1197</y>
+      <y>1089</y>
       <w>54</w>
       <h>180</h>
     </coordinates>
