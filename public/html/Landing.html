@@ -6,20 +6,26 @@
     <meta name="author" content="juansedev2">
     <title>Document</title>
     <link rel="stylesheet" href="/public/css/Normalize.css">
+    <link rel="stylesheet" href="/public/css/Landing.css">
 </head>
 <body>
-    <nav>
-        <ul>
+    <nav id="navigate_section">
+        <ul class="navigate_menu">
             <li><a href="login">Iniciar sesión</a></li>
             <li><a href="registro">Registrarse</a></li>
             <li><a href="acerca">Acerca de</a></li>
         </ul>
     </nav>
     <section id="welcome_section">
-        <h1>Bienvenido</h1>
-        <img src="/public/assets/img/UserIcon.png" alt="Imagen no encontrada" width="300px">
-        <h2>Sistema de administración de usuarios</h2>
-        <!--TODO: EMPEZAR CON LAS VISTAS-->
+        <div id="welcome_box">
+            <div class="welcome_message">
+                <h1>Bienvenido</h1>
+                <img src="/public/assets/img/UserIcon.png" alt="Imagen no encontrada" width="200px">
+            </div>
+            <div>
+                <h2>Sistema de administración de usuarios</h2>
+            </div>
+        </div>
     </section>
 </body>
 </html>
