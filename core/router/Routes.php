@@ -6,6 +6,6 @@ return [
     "" => ["StaticController", "showLanding"],
     "registro" => ["StaticController", "showRegister"],
     "acerca" => ["StaticController", "showAbout"],
-    "login" => ["LoginController", "showLogin"],
-    "login-form" => ["LoginController", "validateLogin"],
+    "login" => ["SessionController", "showLogin"],
+    "login-form" => ["Sessiontroller", "validateLogin"],
 ];

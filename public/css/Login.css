@@ -24,6 +24,7 @@ div.credentials input{
     margin: 10px 0;
     height: 30px;
     border-radius: 4px;
+    font-size: 1.2em;
 }
 div.button{
     text-align: center;
