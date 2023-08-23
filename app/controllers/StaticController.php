@@ -9,4 +9,13 @@ class StaticController extends BaseController{
         static::returnView("Landing");
     }
 
+    public function showRegister(){
+        static::returnView("Register");
+    }
+
+    public function showAbout(){
+        static::returnView("About");
+    }
+
+
 }

@@ -1,0 +1,16 @@
+section#register_section{
+    width: 100%;
+    height: auto;
+    margin-top: 60px;
+}
+section#register_section h1{
+    margin: 30px 0;
+    text-align: center;
+    font-size: 1.6rem;
+}
+section#register_section p{
+    margin: 30px 80px;
+    text-align: justify;
+    font-size: 1.3rem;
+    line-height: 2;
+}
