@@ -14,6 +14,9 @@
     <section id="login_section">
         <form action="login-form" method="POST">
             <h1>Iniciar sesión</h1>
+            <?php if(Authenticator::$alert_credentials):?>
+                <h2>Usuario y/o correo incorrectos, por favor validar</h2>
+            <?php endif?>
             <div class="credentials email">
                 <label for="email">Correo</label>
                 <input type="email" id="email" name="email" required="true">

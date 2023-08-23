@@ -11,6 +11,7 @@ require_once "./app/models/User.php";
 require_once "./app/controllers/BaseController.php";
 require_once "./app/controllers/StaticController.php";
 require_once "./app/controllers/SessionController.php";
+require_once "./core/helpers/Authenticator.php";
 
 Injector::set("config", require_once "./core/config/Config.php");
 Injector::set("QueryBuilder", new QueryBuilder(DBConecction::tryConnection(Injector::get("config")["database"])));
@@ -23,6 +24,3 @@ if(Injector::get("config")["production"]){
 }else{
     ini_set('display_errors', '1');
 }
-
-//$user = new User();
-//dd($user->queryUser("jadmin2v@email.com", "$2y$11\$Y.wlkaUdPN5BpVLuJiTsKOpDOUTcmjl8voXjFD8Z64elmb6LbD6.C"));

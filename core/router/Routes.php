@@ -7,5 +7,5 @@ return [
     "registro" => ["StaticController", "showRegister"],
     "acerca" => ["StaticController", "showAbout"],
     "login" => ["SessionController", "showLogin"],
-    "login-form" => ["Sessiontroller", "validateLogin"],
+    "login-form" => ["SessionController", "tryLogin"],
 ];
