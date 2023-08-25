@@ -5,6 +5,10 @@
 */
 class DBConecction{
 
+    /**
+     * @param array $config is the array that must contain the params of the configuration to the connection with the database 
+     * This function that will try the connection with the database and return the connector with the PDO interface
+    */
     public static function tryConnection(Array $config) : PDO | bool{
 
         try {

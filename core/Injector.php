@@ -21,26 +21,14 @@ class Injector{
         static::$dependencies[$dependency_name] = $value;
     }
 
+    /**
+     * @param string $dependency_name The name of the dependecy to return
+     * This function returns the dependency
+    */
     public static function get(string $dependency_name){
         if(array_key_exists($dependency_name, static::$dependencies)){
             return static::$dependencies[$dependency_name];
         }
     }
-
-    /* public function __get(string $dependency_name){
-        
-        if(property_exists($this, $dependency_name)){
-            return $this->$dependency_name;
-        }
-    }
-
-    public function __set(string $dependency_name, mixed $value){
-        
-        if(property_exists($this, $dependency_name)){
-            $this->$dependency_name = $value;
-        }
-    } */
-
-
 
 }

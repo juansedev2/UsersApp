@@ -3,16 +3,22 @@
 // This class provides the abstractions of the common operations with the database how CRUD
 class QueryBuilder{
 
+    /**
+     * @param PDO $connection Is the param to define the connector atribute and make the operations with the database
+    */
     public function __construct(private PDO $connection){}
 
+    /**
+     * @param string $table_name It's to define the name of the table in the query
+     * @param array $properties It's to define the fields and the values of the query (must be associative)
+     * This function does the query to create one record on the database (INSERT)
+    */
     public function createOne(string $table_name, Array $properties) : bool{
 
         $result = null;
         $fields = implode(", ", array_keys($properties));
         $values = array_values($properties);
-        $wildcards = implode(", ", array_fill(0, count($properties), "?"));
-
-        // !TODA operación con la BD puede fallar, así que siempre realizar esta práctica
+        $wildcards = implode(", ", array_fill(0, count($properties), "?"));        
 
         try {
             $query = $this->connection->prepare("INSERT INTO {$table_name}({$fields}) VALUES({$wildcards})");
@@ -24,6 +30,11 @@ class QueryBuilder{
         }
         return $result;
     }
+
+    /**
+     * @param string $table_name It's to define the name of the table in the query     
+     * This function does the query to return all of the record in a table (SELECT *)
+    */
     public function selectAll(string $table_name): Array | null{
 
         $result = null;
@@ -40,6 +51,11 @@ class QueryBuilder{
         
         return $result;
     }
+
+    /**
+     * @param string $table_name It's to define the name of the table in the query     
+     * This function does the query to return all of the record in a table (SELECT *)
+    */
     public function selectOne(string $table_name, string $pk, string $id): Array | bool{
 
         $result = null;

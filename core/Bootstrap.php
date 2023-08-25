@@ -1,6 +1,6 @@
 <?php
 /**
-* This file get all of the necessary files to init the app, how config, database, etc., also is the is the core file that does inclusion of core files
+* This file get all of the necessary files to init the app, how config, database, etc., also it's the core file that does inclusion of core files
 */
 require_once "./core/testing/Functions.php";
 require_once "./core/Injector.php";
