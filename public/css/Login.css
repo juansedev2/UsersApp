@@ -13,8 +13,11 @@ form{
     border-radius: 10px;
     padding: 40px;
 }
-form > h1{
+form > h1, h2{
     text-align: center;
+}
+form > h2{
+    margin: 10px 0;
 }
 div.credentials{
     margin: 30px 0;
