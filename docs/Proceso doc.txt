@@ -1,40 +1,41 @@
-Acá estará un poco de documentación acerca de este proyecto:
+Acï¿½ estarï¿½ un poco de documentaciï¿½n acerca de este proyecto:
 
-LoginApp es una aplicación que puede realizar las siguientes funciones:
+LoginApp es una aplicaciï¿½n que puede realizar las siguientes funciones:
 
-1. Permite realizar registro e inicio de sesión de usuarios.
+1. Permite realizar registro e inicio de sesiï¿½n de usuarios.
 2. Dado un usuario administrador, se pueden realizar operaciones CRUD con otros usuarios.
-3. Dado un usuario que no sea administrador, este podrá ver opciones de navegación para ver vistas estáticas y ver su información y el único dato que puede cambiar sería su contraseña.
+3. Dado un usuario que no sea administrador, este podrï¿½ ver opciones de navegaciï¿½n para ver vistas estï¿½ticas y ver su informaciï¿½n y el ï¿½nico dato que puede cambiar serï¿½a su contraseï¿½a.
 
-Es más que todo como un ejercicio para una aplicación del patrón de arquitectura MVC.
+Es mï¿½s que todo como un ejercicio para una aplicaciï¿½n del patrï¿½n de arquitectura MVC.
 
-Puede considerarse su uso como base a una aplicación más grande (considerando su modificación para su adaptación).
+Puede considerarse su uso como base a una aplicaciï¿½n mï¿½s grande (considerando su modificaciï¿½n para su adaptaciï¿½n).
 
-El proceso de documentación del proyecto está dado en un documento llamado "Documentación desarrollo.pdf" que es un simple proceso de documentación del desarrollo de la App. En proyectos de software por lo general se suele incluir esta parte de manera más formal (plantillas, estándares, metodologías, etc.), así que tomarlo el existente como un ejemplo simple, ya que no amerita la complejidad de realizarlo, más se deja en observación la importancia de contar con documentación siempre, tanto interna como externa.
+El proceso de documentaciï¿½n del proyecto estï¿½ dado en un documento llamado "Documentaciï¿½n desarrollo.pdf" que es un simple proceso de documentaciï¿½n del desarrollo de la App. En proyectos de software por lo general se suele incluir esta parte de manera mï¿½s formal (plantillas, estï¿½ndares, metodologï¿½as, etc.), asï¿½ que tomarlo el existente como un ejemplo simple, ya que no amerita la complejidad de realizarlo, mï¿½s se deja en observaciï¿½n la importancia de contar con documentaciï¿½n siempre, tanto interna como externa.
 
 
 # Proceso y progreso de desarrollo del proyecto
 
 Mes: Julio
 
- ° DOCUMENTACIÓN
+ ï¿½ DOCUMENTACIï¿½N
 
-	Días: 
+	Dï¿½as: 
 
-	24  => Inicio de documentación, toma de requerimientos, descripción de tecnologías a utilizar y lista de elementos de diseño lógico del producto.
-	25  => Inicio del diseño lógico del producto, inicio de diagramas de procesos y se deja pendiente en terminar.
-	26  => Finalización del diseño lógico del producto, inicio de diagramas de paquetes.
-	27  => Finalización del diagrama de paquetes e inicio de diagrama de clases
+	24  => Inicio de documentaciï¿½n, toma de requerimientos, descripciï¿½n de tecnologï¿½as a utilizar y lista de elementos de diseï¿½o lï¿½gico del producto.
+	25  => Inicio del diseï¿½o lï¿½gico del producto, inicio de diagramas de procesos y se deja pendiente en terminar.
+	26  => Finalizaciï¿½n del diseï¿½o lï¿½gico del producto, inicio de diagramas de paquetes.
+	27  => Finalizaciï¿½n del diagrama de paquetes e inicio de diagrama de clases
 	28 en adelante => Pausa del proyecto
 
 Mes: Agosto
 
-° DOCUMENTACIÓN
+ï¿½ DOCUMENTACIï¿½N
 
-	Días: 
+	Dï¿½as: 
 
-	15  => Continuación de diagrama de clases.
-	16  => Continuación de diagrama de clases y su finalización e inicio de diagramas MER (Modelo Entidad Relacion) Y MR (Modelo Relacional).
-	17  => Continuación y finalización de diagrmas MER Y MR.
-	18  => Diseño de mapa de navegación y mockups.
-	20  => Inicio del desarrollo de la aplicación (creación de base de datos y poblado)
+	15  => Continuaciï¿½n de diagrama de clases.
+	16  => Continuaciï¿½n de diagrama de clases y su finalizaciï¿½n e inicio de diagramas MER (Modelo Entidad Relacion) Y MR (Modelo Relacional).
+	17  => Continuaciï¿½n y finalizaciï¿½n de diagrmas MER Y MR.
+	18  => Diseï¿½o de mapa de navegaciï¿½n y mockups.
+	20  => Inicio del desarrollo de la aplicaciï¿½n (creaciï¿½n de base de datos y poblado)
+	21 hasta el momento => Continuaciï¿½n del desarrollo del backend
