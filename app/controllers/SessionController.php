@@ -1,6 +1,22 @@
 <?php
 
 class SessionController extends BaseController{
+
+    /***
+     * ? It's really necessary to have an array to prepare and use the roles of the app?
+     * The answers is NO, this is a way to do this management this important part of the app, but NO necessary is the best,
+     * of course it's better and dinamic recover the roles of the database for example for more actions, but in this case
+     * it's not necessary because it's a small app to use. My recommendation is that is possible change this if it's necessary,
+     * then you should recover that roles with a query and use it how you need it, accommodating to the use for it.
+     * In this case i use an array, is fast
+    */
+    /**
+     * @pr
+     */
+    private const ROLES = [
+        1 => "administrador",
+        2 => "general"
+    ];
     
     public function showLogin(){
         static::returnView("Login");
@@ -20,7 +36,11 @@ class SessionController extends BaseController{
             
             // It's necessary evaluate and compare both passwords (record and the input by the form)
             if(Encryptor::comparePassword($password, $user["password"])){
-                dd("Pasó");
+                // It's necessary evaluate the rol name to prepare the session and the views
+                dd($user);
+                if(in_array($user["role_id"])){ // For security, it's necessary compare the validate roles in the system
+
+                }
             }else{
                 Authenticator::returnCredentialsError();
                 $this->showLogin();

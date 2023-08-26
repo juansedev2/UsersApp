@@ -4,19 +4,19 @@
 class Authenticator{
 
     /**
-     * @param bool $alert_credentials is a flag to show a message in the view about that the credentials is incorrect
+     *$alert_credentials is a flag to show a message in the view about that the credentials is incorrect
     */
     private static bool $alert_credentials = false;
     /**
-     * @param bool $alert_session is a flag to show a message in the view about is necessary try login to use the app
+     *$alert_session is a flag to show a message in the view about is necessary try login to use the app
     */
     private static bool $alert_session = false;
     /**
-     * @param bool $alert_unregistred is a flag to show a message in the view about the user doesn't exists
+     *$alert_unregistred is a flag to show a message in the view about the user doesn't exists
     */
     private static bool $alert_unregistred = false;
     /**
-     * @param bool $message_error is a dinamic string to show the error to the user in the login form if this fails on login
+     *$message_error is a dinamic string to show the error to the user in the login form if this fails on login
     */
     private static string $message_error = "";
 

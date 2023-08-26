@@ -3,11 +3,17 @@
 // This class is the base of all of the models of the app, contains the common properties and actions of the models
 class Model{
 
-    // @param string $table_name is the name of the table for each model that could be redefined if it's necessary
+    /**
+     * $table_name is the name of the table for each model that could be redefined if it's necessary
+    */
     protected static string $table_name = "";
-    //@param string $primary_key is the name of the primary_key for each model that could be redefined if it's necessary
+    /**
+     * $primary_key is the name of the primary_key for each model that could be redefined if it's necessary
+    */
     protected static string $primary_key = "id";
-    // @param array $properties is a collection of the properties of the models obtained from the database
+    /**
+     * $properties is a collection of the properties of the models obtained from the database 
+    */
     protected Array $properties = [];
 
     public function __construct(Array $properties = []){
