@@ -38,6 +38,10 @@ class Model{
         return $model;
     }
 
+    /**
+     * This function save the record of the model in the database
+     * @return bool true if the record is saved in the database, false in otherwise
+    */
     public function save(): bool{
 
         // It's necessary that of all of the models have defined it's table name

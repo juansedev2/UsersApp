@@ -271,23 +271,31 @@ Responsibilities
       <x>3429</x>
       <y>1062</y>
       <w>675</w>
-      <h>297</h>
+      <h>414</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Helper&gt;&gt;
 Authenticator
 Package::core/helpers/Authenticator
 --
-+alert_credentials: bool_
-+alert_session: bool_
+_-alert_credentials: bool_
+_-alert_session: bool_
+_-alert_unregistred: bool_
+_-message_error: string_
 --
-+ Authenticator()
-+ createSession(id_user: string, name_user: string, email_user: string, rol_user: admin): void
-+ validateSession(): bool
-+ deleteSession(): void
-- startSession(): void
+_+ createSession(id_user: string, name_user: string, email_user: string, rol_user: admin): void_
+_+ validateSession(): bool_
+_+ deleteSession(): void_
+_- startSession(): void_
+_+ returnCredentialsError(): void_
+_+returnUnregistredUserError(): void_
+_+returnSessionError(): void_
+_+ returnErrorMesssage(): string_
+_+ resetAlerts(): void_
+_+ validateErrors(): bool_
 --
 Responsibilities
 -- Verify that the client has the session active and can get in the app
+-- Show the error messages in the login view
 -- Check if the client does not have a session active and warn of it to block access
 -- Create, verify and delete the session</panel_attributes>
     <additional_attributes/>

@@ -15,7 +15,7 @@
         <form action="login-form" method="POST">
             <h1>Iniciar sesión</h1>
             <?php if(Authenticator::validateErrors()):?>
-                <h2><?php echo Authenticator::returnMessageError()?></h2>
+                <h2><?php echo Authenticator::returnErrorMesssage()?></h2>
             <?php endif?>
             <div class="credentials email">
                 <label for="email">Correo</label>
