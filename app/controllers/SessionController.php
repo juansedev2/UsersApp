@@ -11,13 +11,23 @@ class SessionController extends BaseController{
         $email = $_POST["email"];
         $password = $_POST["password"];
 
-        // Call the model User to query for the user and validate it's personal data
-        $user = new User();
+        // Encrypt the password to compare with the 
 
-        if($user->queryUserByEmail($email, $password)){
-            dd("Pasó");
+        // Call the model User to query for the user and validate it's personal data
+        $user = (new User())->queryUserByEmail($email);
+
+        if($user){
+            
+            // It's necessary evaluate and compare both passwords (record and the input by the form)
+            if(Encryptor::comparePassword($password, $user["password"])){
+                dd("Pasó");
+            }else{
+                Authenticator::returnCredentialsError();
+                $this->showLogin();
+            }
+
         }else{
-            Authenticator::$alert_credentials = true;
+            Authenticator::returnUnregistredUserError();
             $this->showLogin();
         }
     }

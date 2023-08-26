@@ -10,7 +10,7 @@ class User extends Model{
         parent::__construct($properties);
     }
 
-    public function queryUserByEmail(string $email_user, string $password) : bool | Array{
+    public function queryUserByEmail(string $email_user) : bool | Array{
         
         $query = "SELECT * FROM users WHERE email = ? LIMIT 1";
         $result = Injector::get("QueryBuilder")->ownQuery($query, [$email_user]);

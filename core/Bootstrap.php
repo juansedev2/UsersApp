@@ -6,12 +6,14 @@ require_once "./core/testing/Functions.php";
 require_once "./core/Injector.php";
 require_once "./core/database/DBConnection.php";
 require_once "./core/database/QueryBuilder.php";
+require_once "./core/helpers/Authenticator.php";
+require_once "./core/security/Encryptor.php";
 require_once "./app/models/Model.php";
 require_once "./app/models/User.php";
 require_once "./app/controllers/BaseController.php";
 require_once "./app/controllers/StaticController.php";
 require_once "./app/controllers/SessionController.php";
-require_once "./core/helpers/Authenticator.php";
+
 
 Injector::set("config", require_once "./core/config/Config.php");
 Injector::set("QueryBuilder", new QueryBuilder(DBConecction::tryConnection(Injector::get("config")["database"])));
