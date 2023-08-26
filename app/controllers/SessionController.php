@@ -11,12 +11,10 @@ class SessionController extends BaseController{
      * In this case i use an array, is fast
     */
     /**
-     * @pr
-     */
-    private const ROLES = [
-        1 => "administrador",
-        2 => "general"
-    ];
+     * 
+    */
+    private const ROLES = [1 => "administrador", 2 => "general"];
+    private const ROLE_VIEWS = [1 => "Administrator", 2 => "General"];
     
     public function showLogin(){
         static::returnView("Login");
@@ -36,11 +34,18 @@ class SessionController extends BaseController{
             
             // It's necessary evaluate and compare both passwords (record and the input by the form)
             if(Encryptor::comparePassword($password, $user["password"])){
-                // It's necessary evaluate the rol name to prepare the session and the views
-                dd($user);
-                if(in_array($user["role_id"])){ // For security, it's necessary compare the validate roles in the system
 
+                // It's necessary evaluate the rol name to prepare the session and the views
+                if(array_key_exists($user["role_id"], self::ROLES)){ // For security, it's necessary compare the validate roles in the system
+                    
+                    // Create the session
+                    
+
+                }else{
+                    Authenticator::returnUnregistredUserError();
+                    $this->showLogin();
                 }
+
             }else{
                 Authenticator::returnCredentialsError();
                 $this->showLogin();
@@ -50,5 +55,9 @@ class SessionController extends BaseController{
             Authenticator::returnUnregistredUserError();
             $this->showLogin();
         }
+    }
+
+    public function showMenu(){
+
     }
 }

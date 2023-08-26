@@ -8,4 +8,5 @@ return [
     "acerca" => ["StaticController", "showAbout"],
     "login" => ["SessionController", "showLogin"],
     "login-form" => ["SessionController", "tryLogin"],
+    "menu" => ["SessionController", "showMenu"]
 ];
