@@ -37,10 +37,8 @@ class SessionController extends BaseController{
 
                 // It's necessary evaluate the rol name to prepare the session and the views
                 if(array_key_exists($user["role_id"], self::ROLES)){ // For security, it's necessary compare the validate roles in the system
-                    
-                    // Create the session
-                    
-
+                    Authenticator::createSession($user["id"], $user["first_name"] . " " . $user["last_name"], $user["email"], $user["role_id"]);
+                    self::redirect("menu");
                 }else{
                     Authenticator::returnUnregistredUserError();
                     $this->showLogin();
@@ -58,6 +56,12 @@ class SessionController extends BaseController{
     }
 
     public function showMenu(){
-
+        
+        if(Authenticator::validateSession()){
+            self::returnView(self::ROLE_VIEWS[$_SESSION["role_id"]]);
+        }else{
+            Authenticator::returnSessionError();
+            $this->showLogin();
+        }
     }
 }

@@ -72,41 +72,53 @@ class Authenticator{
      * 
      * ? Maybe this will can be dinamic with an associate array to define the session, with a loop create the dinamic date in $_SESSION["date"]
     */
-    public static function createSession(int $id_user, string $name, string $email, string $role){
+    public static function createSession(int $id_user, string $name, string $email, string $role_id){
         self::startSession();
         $_SESSION["id_user"] = $id_user;
         $_SESSION["name"] = $name;
         $_SESSION["email"] = $email;
-        $_SESSION["role"] = $role;
+        $_SESSION["role_id"] = $role_id;
+        $params = session_get_cookie_params();
+        //dd($params);
     }
 
+    /**
+     * That function validates if the session is active and complete to do validations
+     * @return bool true if the session is correct or false if the session is empty
+    */
     public static function validateSession(): bool{
-        
+        self::startSession();
+        return !empty($_SESSION);
     }
     
 
     private static function startSession() : void {
-        session_start();
+        if(empty(session_id())){
+            session_start(
+                [
+                    "cookie_lifetime" => 0, 
+                    "cookie_httponly" => true,
+                ]
+            );
+        }
     }
 
     public static function destroySession(): void{
 
-        // TODO: CONTINUAR CON LA CREACIÒN DE LA SESIÓN
+        
         self::startSession();
         session_unset();
         session_destroy();
-        // For security...
-        unset($_SESSION["id_user"]);
+        // For security and test later
+        /* unset($_SESSION["id_user"]);
         unset($_SESSION["name"]);
         unset($_SESSION["email"]);
-        unset($_SESSION["role"]);
-        $params = session_get_cookie_params(); // * Obtener los parámetros ya definidos de configuración para la cookie
-        setcookie(session_name(), null , time() - 42000, // ! Esto elimina la cookie al darle un tiempo no actual
+        unset($_SESSION["role"]); */
+        $params = session_get_cookie_params();
+        setcookie(session_name(), null , time() - 42000, 
             $params["path"], $params["domain"],
             $params["secure"], $params["httponly"]
         );
     }
-
-    
 
 }

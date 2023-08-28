@@ -23,6 +23,8 @@ if(Injector::get("config")["production"]){
     ini_set('error_reporting', E_ALL | E_NOTICE | E_STRICT);
     ini_set('display_errors', '0');
     ini_set('track_errors', 'On');
+    ini_set('session.cookie_httponly', "1");
 }else{
+    ini_set('session.cookie_httponly', "1");
     ini_set('display_errors', '1');
 }
