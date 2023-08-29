@@ -69,17 +69,16 @@ class Authenticator{
     }
 
     /**
-     * 
+     * This function creates the session with some necessary data of the user
      * ? Maybe this will can be dinamic with an associate array to define the session, with a loop create the dinamic date in $_SESSION["date"]
     */
     public static function createSession(int $id_user, string $name, string $email, string $role_id){
         self::startSession();
+        //dd($_COOKIE[session_name()]);
         $_SESSION["id_user"] = $id_user;
         $_SESSION["name"] = $name;
         $_SESSION["email"] = $email;
         $_SESSION["role_id"] = $role_id;
-        $params = session_get_cookie_params();
-        //dd($params);
     }
 
     /**
@@ -104,8 +103,6 @@ class Authenticator{
     }
 
     public static function destroySession(): void{
-
-        
         self::startSession();
         session_unset();
         session_destroy();
@@ -114,11 +111,6 @@ class Authenticator{
         unset($_SESSION["name"]);
         unset($_SESSION["email"]);
         unset($_SESSION["role"]); */
-        $params = session_get_cookie_params();
-        setcookie(session_name(), null , time() - 42000, 
-            $params["path"], $params["domain"],
-            $params["secure"], $params["httponly"]
-        );
     }
 
 }
