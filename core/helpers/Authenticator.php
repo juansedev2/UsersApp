@@ -104,6 +104,12 @@ class Authenticator{
 
     public static function deleteSession(): void{
         self::startSession();
+        $params = session_get_cookie_params();
+        setcookie(
+            session_name(), null, time() - 220000,
+            $params["path"], $params["domain"],
+            $params["secure"], $params["httponly"]
+        );
         session_unset();
         session_destroy();
     }
