@@ -4,22 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenida administrador</title>
+    <link rel="stylesheet" href="/public/css/Normalize.css">
     <link rel="stylesheet" href="/public/css/Administratror.css">
+    <link rel="shortcut icon" href="/public//assets/icons/Users.ico" type="image/x-icon">
 </head>
 <body>
-    <main>
-        <h1>Bienvenido administrador: <?= $_SESSION["name"]?></h1>
-        <section>
-            <div>
-                <img src="/public/assets/img/UserIcon.jpg" alt="Imagen no encontrada" width="100px">
+    <main id="section_administrator_menu">
+        <section id="section_tittle">
+            <h1>Bienvenido administrador: <?= $_SESSION["name"]?></h1>
+        </section>
+        <section id="section_administrator_options">
+            <div class="section_options">
+                <img src="/public/assets/img/UserIcon.jpg" alt="Imagen no encontrada" width="150px">
                 <a href="perfil">Ver tu perfil</a>
             </div>
-            <div>
-                <img src="/public/assets/img/Users-icon.jpg" alt="Imagen no encontrada" width="100px">
+            <div class="section_options">
+                <img src="/public/assets/img/Users-icon.jpg" alt="Imagen no encontrada" width="150px">
                 <a href="administrar">Administrar usuarios</a>
             </div>
-            <div>
-                <img src="/public/assets/img/Exit.jpg" alt="Imagen no encontrada" width="100px">
+            <div class="section_options">
+                <img src="/public/assets/img/Exit.jpg" alt="Imagen no encontrada" width="150px">
                 <a href="salir">Salir</a>
             </div>
         </section>
