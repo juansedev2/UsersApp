@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/public/css/Normalize.css">
     <link rel="stylesheet" href="/public/css/NavMenu.css">
     <link rel="stylesheet" href="/public/css/About.css">
+    <?php include_once "./public/partials/Favicon.html"?>
 </head>
 <body>
     <?php require "./public/partials/NavMenu.html" ?>

@@ -6,7 +6,7 @@
     <title>Bienvenida administrador</title>
     <link rel="stylesheet" href="/public/css/Normalize.css">
     <link rel="stylesheet" href="/public/css/Administratror.css">
-    <link rel="shortcut icon" href="/public//assets/icons/Users.ico" type="image/x-icon">
+    <?php include_once "./public/partials/Favicon.html"?>
 </head>
 <body>
     <main id="section_administrator_menu">
