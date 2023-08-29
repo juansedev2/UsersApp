@@ -5,10 +5,10 @@ class BaseController{
 
     public function __construct(){}
 
-    protected static function returnView(string $name_view): void{
+    protected static function returnView(string $name_view){
         
         if(file_exists("./public/views/{$name_view}.view.php")){
-            require "./public/views/{$name_view}.view.php";
+            return require "./public/views/{$name_view}.view.php";
         }else{
             header("HTTP/1.0 404 NO ENCONTRADO");
         }

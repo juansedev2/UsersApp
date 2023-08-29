@@ -102,15 +102,10 @@ class Authenticator{
         }
     }
 
-    public static function destroySession(): void{
+    public static function deleteSession(): void{
         self::startSession();
         session_unset();
         session_destroy();
-        // For security and test later
-        /* unset($_SESSION["id_user"]);
-        unset($_SESSION["name"]);
-        unset($_SESSION["email"]);
-        unset($_SESSION["role"]); */
     }
 
 }

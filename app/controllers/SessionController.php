@@ -11,16 +11,29 @@ class SessionController extends BaseController{
      * In this case i use an array, is fast
     */
     /**
-     * 
+     * ROLES is an associative array that must contains the names of the validate roles in the app 
     */
     private const ROLES = [1 => "administrador", 2 => "general"];
+    /**
+     * ROLES_VIEES is an associative array that must contains the id of each role of the app to control
+     * the views that the user look in his session
+    */
     private const ROLE_VIEWS = [1 => "Administrator", 2 => "General"];
-    
-    public function showLogin(){
+
+
+    /**
+     * This function returns the login view to give the credentiales of the client
+    */
+    public function showLogin(): void{
         static::returnView("Login");
     }
 
-    public function tryLogin(){
+    /**
+     * This function get the credentials of the user, validate each one and try login if it's possible,
+     * if the user is on the database and both of credentiales (email and passowrd) and correct, then
+     * he can sign in and see the correspondent view, else then a specific error message must be showed and returns the login view
+    */
+    public function tryLogin(): void{
         
         $email = $_POST["email"];
         $password = $_POST["password"];
@@ -55,7 +68,12 @@ class SessionController extends BaseController{
         }
     }
 
-    public function showMenu(){
+    /**
+     * This function return the correspondent view of the user according to his role, recovered from the
+     * data of the session. If some reason the role of the user is not in the validate list, then show a error
+     * for security
+    */
+    public function showMenu(): void{
         
         if(Authenticator::validateSession()){
             self::returnView(self::ROLE_VIEWS[$_SESSION["role_id"]]);
@@ -63,5 +81,14 @@ class SessionController extends BaseController{
             Authenticator::returnSessionError();
             $this->showLogin();
         }
+    }
+
+    /**
+     * This function calls the Authenticator to close the session and returns the login view, then the
+     * user shouldn't to access to the actions of his user, he needs to login again
+    */
+    public function closeSession(): void{
+        Authenticator::deleteSession();
+        $this->showLogin();
     }
 }
