@@ -7,5 +7,6 @@ return [
     "login" => ["SessionController", "showLogin"],
     "login-form" => ["SessionController", "tryLogin"],
     "menu" => ["SessionController", "showMenu"],
-    "salir" => ["SessionController", "closeSession"]
+    "salir" => ["SessionController", "closeSession"],
+    "perfil" => ["UserController", "showProfile"],
 ];

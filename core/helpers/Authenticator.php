@@ -90,8 +90,10 @@ class Authenticator{
         return !empty($_SESSION);
     }
     
-
-    private static function startSession() : void {
+    /**
+     * This function start or resume the session of the user
+    */
+    public static function startSession() : void {
         if(empty(session_id())){
             session_start(
                 [

@@ -13,7 +13,7 @@ require_once "./app/models/User.php";
 require_once "./app/controllers/BaseController.php";
 require_once "./app/controllers/StaticController.php";
 require_once "./app/controllers/SessionController.php";
-
+require_once "./app/controllers/UserController.php";
 
 Injector::set("config", require_once "./core/config/Config.php");
 Injector::set("QueryBuilder", new QueryBuilder(DBConecction::tryConnection(Injector::get("config")["database"])));
