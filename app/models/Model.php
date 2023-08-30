@@ -59,13 +59,16 @@ class Model{
     }
 
     public static function selectOne(string $id) : static{
-
         $model = new static();
-        $model->findOne($id);
+        $model->findOne((string) $id);
         return $model;
     }
 
-    // Query one of the models in the database
+    /**
+     * Query one of the models in the database according his id, this gets all of his data
+     * @param string $id is the id of the model/user to query
+     * @return bool true if exist any user with the $id, false
+    */
     public function findOne(string $id): bool{
 
         // It's necessary that of all of the models have defined it's table name
@@ -75,7 +78,7 @@ class Model{
             
             $result = Injector::get("QueryBuilder")->selectOne(static::$table_name, static::$primary_key, $id);
 
-            if(empty($results)){
+            if(empty($result)){
                 return false;
             }else{
                 // Update the properties of that model
