@@ -1,0 +1,27 @@
+section#section_profile_data{
+    width: 40%;
+    margin: 60px auto;
+    height: auto;
+}
+fieldset{
+    padding: 50px;
+    margin: auto;
+}
+legend{
+    text-align: center;
+    font-size: 1.5rem;
+}
+form#form_data_profile input[type="text"], input[type="number"], input[type="password"], input[type="email"]{
+    width: 100%;
+    font-size: 1.3rem;
+    margin: 10px 0;
+}
+form#form_data_profile label{
+    display: inline-block;
+    margin: 10px 0;
+    font-size: 1.3rem;
+}
+form#form_data_profile select{
+    display: block;
+    font-size: 1.2rem;
+}

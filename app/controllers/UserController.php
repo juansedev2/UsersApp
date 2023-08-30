@@ -11,6 +11,6 @@ class UserController extends BaseController{
         Authenticator::startSession();
         // Need to query of the user according his session
         $user = User::selectOne($_SESSION["id_user"]);
-        dd($user);
+        $this->returnView("AdministratorProfile");
     }
 }
