@@ -86,7 +86,6 @@ class Model{
                 return true;
             }
         }
-
     }
 
     // Query all of the models in the database

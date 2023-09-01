@@ -13,7 +13,7 @@ legend{
 }
 form#form_data_profile input[type="text"], input[type="number"], input[type="password"], input[type="email"]{
     width: 100%;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     margin: 10px 0;
 }
 form#form_data_profile label{

@@ -64,6 +64,7 @@ class QueryBuilder{
             $query = $this->connection->prepare("SELECT * FROM {$table_name} WHERE {$pk} = ? LIMIT 1");
             $query->execute([$id]);
             $result = $query->fetchAll(PDO::FETCH_ASSOC); // Return how a associative array
+            $result = $result[0];
             $query->closeCursor();
         } catch (PDOException $error) {
             echo $error;

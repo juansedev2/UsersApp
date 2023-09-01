@@ -29,5 +29,22 @@ class User extends Model{
         }
     }
 
+    /**
+     * ? Maybe this is not the better way, maybe one query with the method join and get the data most completely how this case
+     * ? with an record that needed data of two o more tables. I do this for a faster process.
+     * 
+     * This function add the name of the identification name according to the id of this, it's necessary
+     * only if the model need it
+    */
+    public function addTypeIdentificationName(){
+        // Add manually the name of the types
+        $types_identification = ["CC - Cédula de ciudadanía", "TI - Tarjeta de identidad"];
+        if($this->properties["identification_type"] < 1){
+            $this->properties["identification_name"] = "ERROR DE REGISTRO";
+        }else{
+            $this->properties["identification_name"] = $types_identification[$this->properties["identification_type"] - 1];
+        }
+    }
+
 
 }
