@@ -28,8 +28,9 @@ class Router{
             }
             
         }
-
-        // Maybe it's possible return a 404 view or a header with 404
-        throw new Exception("ERROR, RECURSO NO ENCONTRADO", 1);
+        // This is for development
+        //throw new Exception("ERROR, RECURSO NO ENCONTRADO", 1);
+        $staticController = new StaticController();
+        $staticController->show404();
     }
 }

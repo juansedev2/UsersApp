@@ -15,7 +15,7 @@
         <h1>Administrador/a: <?=$_SESSION["name"]?></h1>
     </section>
     <section id="section_profile_data">
-        <?php include_once "./public/partials/FormPersonalData.view.php"?>
+        <?php include_once "./public/partials/FormPersonalDataAdmin.view.php"?>
     </section>
 </body>
 </html>

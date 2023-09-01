@@ -21,7 +21,8 @@ class UserController extends BaseController{
         
         if(isset($name_view)){ // In case of error, validate it
             $this->returnView($name_view, [
-                "user" => $user->properties
+                "user" => $user->properties,
+                "disabled" => "disabled"
             ]);
         }else{
             $this->redirect("404");
@@ -31,15 +32,22 @@ class UserController extends BaseController{
     public function updateUserProfile(){
         
         switch ($this->validateRol()) {
+            
             case '1': // Case admin
-                # code...
+                $email = $_POST["email"];
+                $password = $_POST["password"];
+                dd("Administrador");
             break;
+
             case '2': // Case general
-                # code...
+                $email = $_POST["email"];
+                $password = $_POST["password"];
             break;
+
             default:
                 $this->showProfile();
             break;
+
         }
     }
 
