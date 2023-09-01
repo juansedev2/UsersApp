@@ -17,5 +17,9 @@ class StaticController extends BaseController{
         static::returnView("About");
     }
 
+    public function show404(){
+        static::returnView("404");
+    }
+
 
 }

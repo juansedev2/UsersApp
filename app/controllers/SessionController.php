@@ -20,7 +20,6 @@ class SessionController extends BaseController{
     */
     private const ROLE_VIEWS = [1 => "Administrator", 2 => "General"];
 
-
     /**
      * This function returns the login view to give the credentiales of the client
     */

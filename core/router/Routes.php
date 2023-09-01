@@ -9,4 +9,5 @@ return [
     "menu" => ["SessionController", "showMenu"],
     "salir" => ["SessionController", "closeSession"],
     "perfil" => ["UserController", "showProfile"],
+    "404" => ["StaticController", "show404"],
 ];
