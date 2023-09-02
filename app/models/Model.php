@@ -110,7 +110,7 @@ class Model{
     // Update one of the models in the database
     public function update(Array $properties){
         // (string) $this->propiedades[static::$primary_key] gives the value of the id of the model that invoke this not static method
-        $result = Injector::get("QueryBuilder")->updateOne(static::$table_name, static::$primary_key, (string) $this->propiedades[static::$primary_key], $properties);
+        $result = Injector::get("QueryBuilder")->updateOne(static::$table_name, static::$primary_key, (string) $this->properties[static::$primary_key], $properties);
         $this->updateProperties($properties);
         return $result;
     }
@@ -118,7 +118,7 @@ class Model{
     // Delete one of the models in the database
     public function delete(){
         // (string) $this->propiedades[static::$primary_key] gives the value of the id of the model that invoke this not static method
-        $result = Injector::get("QueryBuilder")->deleteOne(static::$table_name, static::$primary_key, (string) $this->propiedades[static::$primary_key]);
+        $result = Injector::get("QueryBuilder")->deleteOne(static::$table_name, static::$primary_key, (string) $this->properties[static::$primary_key]);
         return $result;
     }
 }

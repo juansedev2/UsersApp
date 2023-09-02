@@ -85,7 +85,7 @@ class QueryBuilder{
         $result = null;
         
         try {
-            $query = $this->connection->prepare("UPDATE {$table_name} set{$fields_wildcards} WHERE {$pk} = ?");
+            $query = $this->connection->prepare("UPDATE {$table_name} set {$fields_wildcards} WHERE {$pk} = ?");
             $query->execute([...$values, $id]);
             $query->closeCursor();
             $result = true;

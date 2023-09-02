@@ -7,6 +7,7 @@ require_once "./core/Injector.php";
 require_once "./core/database/DBConnection.php";
 require_once "./core/database/QueryBuilder.php";
 require_once "./core/helpers/Authenticator.php";
+require_once "./core/helpers/FormValidator.php";
 require_once "./core/security/Encryptor.php";
 require_once "./app/models/Model.php";
 require_once "./app/models/User.php";
