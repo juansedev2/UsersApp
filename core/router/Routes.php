@@ -11,4 +11,5 @@ return [
     "perfil" => ["UserController", "showProfile"],
     "actualizar-perfil" => ["UserController", "updateUserProfile"],
     "404" => ["StaticController", "show404"],
+    "500" => ["StaticController", "showInternalServerError"],
 ];

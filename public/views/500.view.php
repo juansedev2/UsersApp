@@ -1,0 +1,1 @@
+<?php require_once "./public/html/500.html";?>

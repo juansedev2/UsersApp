@@ -71,26 +71,34 @@ class UserController extends BaseController{
                 // * To show messages of errors in the data, better use the front for that porpouse, in the back, only cancel the request and return the view again
 
                 if(!FormValidator::EmailValidator($email)){
-                    return self::redirect("pefil");
+                    $this->sendMessageOperation("Formato de correo electrónico no válido");
+                    return $this->showProfile();
                 }
 
                 if(empty($password)){ // If the passwod is empty, then real password doesn't have to change, only the email
 
                     $user = User::selectOne($_SESSION["id_user"]);
-                    $user->update(["email" => $email]);
+                    //dd($user->update(["email" => $email]));
                     $this->sendMessageOperation("Tu correo se ha actualizado correctamente");
                     return $this->showProfile();
+
                 }else{
 
                     if(!FormValidator::PasswordValidator($password)){
-                        return self::redirect("pefil");
+                        $this->sendMessageOperation("La contraseña debe contener mayúsculas minúsculas, números y caracteres especiales, mínimo 8 caracteres");
+                        return $this->showProfile();
                     }
 
                     $user = User::selectOne($_SESSION["id_user"]);
-                    dd($user);
+                    $user->update([
+                        "email" => $email,
+                        "password" => Encryptor::encryptPassword($password)
+                    ]);
+
+                    $this->sendMessageOperation("Tu correo y contraseña se han actualizado correctamente");
+                    $this->showProfile();
 
                 }
-
             break;
 
             default:

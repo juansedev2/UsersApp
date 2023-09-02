@@ -21,5 +21,13 @@ class StaticController extends BaseController{
         static::returnView("404");
     }
 
+    /**
+     * This function returns a view about an error of the server, this is used in cases for example the server cannot answer the request
+     * for a fatal error, for example the connection with the db it got lost
+    */
+    public function showInternalServerError(){
+        static::returnView("500");
+    }
+
 
 }
