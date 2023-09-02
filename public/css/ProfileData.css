@@ -35,6 +35,9 @@ div.buttons button{
     padding: 10px;
     font-size: 1.2rem;
 }
-section#section_profile_tittle h1{
+section#section_profile_tittle{
     text-align: center;
+}
+section#section_profile_tittle h2{
+    margin: 20px 0;
 }
