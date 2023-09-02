@@ -13,9 +13,8 @@
         </div>
         <label for="document_type">Tipo de documento</label>
         <select name="document_type" id="document_type">
-            <option value="1">1. CC - Cédula de ciudadanía</option>
-            <option value="2">2. TI - Tarjeta de identidad</option>
-            <option value="<?=$user["identification_type"]?>" selected="true">Registrado: <?=$user["identification_name"]?></option>
+            <?php require_once "./public/partials/IdentificationTypesList.view.php"?>
+            <option value="<?=$user["identification_type"]?>" selected="true">Registrado: <?=$user["identification_name"]?></option> -->
         </select>
         <label for="number_document">Número de documento</label>
         <input type="number" name="number_document" id="number_document" value="<?=$user["identification_number"]?>">

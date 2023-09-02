@@ -13,16 +13,20 @@ class UserController extends BaseController{
     public function __construct(){}
 
     public function showProfile(){
+
         Authenticator::startSession();
-        // Need to query of the user according his session
+        // Need to query of the user according his id user of the session
         $user = User::selectOne($_SESSION["id_user"]);
-        $user->addTypeIdentificationName();
         $name_view = Self::ROLE_PROFILE_VIEWS[$this->validateRol()];
+        // It's necessary send the roles on the db to don't insert manually
+        $identification_types = (new IdentificationType)->selectAll();
+        // Also match the id of the identification type and it's name
+        $user->addTypeIdentificationName($identification_types);
         
         if(isset($name_view)){ // In case of error, validate it
             $this->returnView($name_view, [
                 "user" => $user->properties,
-                "disabled" => "disabled"
+                "identification_types" => $identification_types
             ]);
         }else{
             $this->redirect("404");
