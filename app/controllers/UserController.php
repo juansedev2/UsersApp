@@ -14,6 +14,10 @@ class UserController extends BaseController{
 
     public function showProfile(){
 
+        if(!$this->validateSession()){
+            return $this->redirectToMenu();
+        }
+
         Authenticator::startSession();
         // Need to query of the user according his id user of the session
         $user = User::selectOne($_SESSION["id_user"]);
@@ -58,6 +62,15 @@ class UserController extends BaseController{
     private function validateRol(){
         Authenticator::startSession();
         return $_SESSION["role_id"];
+    }
+
+    private function validateSession(): bool{
+        return SessionController::validateSession();
+    }
+
+    private function redirectToMenu(){
+        Authenticator::returnSessionError();
+        return self::redirect("login");
     }
 
 }

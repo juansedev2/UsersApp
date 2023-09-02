@@ -90,4 +90,12 @@ class SessionController extends BaseController{
         Authenticator::deleteSession();
         $this->showLogin();
     }
+
+    /**
+     * This function validate if the session is active at the momento, it'll be thinked for use to other controllers
+     * @return bool True if the session is active, else return False
+    */
+    public static function validateSession(): bool{
+        return Authenticator::validateSession();
+    }
 }
