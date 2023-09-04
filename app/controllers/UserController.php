@@ -25,6 +25,11 @@ class UserController extends BaseController{
         Authenticator::startSession();
         // Need to query of the user according his id user of the session
         $user = User::selectOne($_SESSION["id_user"]);
+
+        if(!$user){
+            return $this->redirect("500");
+        }
+        
         $name_view = Self::ROLE_PROFILE_VIEWS[$this->validateRol()];
         // It's necessary send the roles on the db to don't insert manually
         $identification_types = (new IdentificationType)->selectAll();
@@ -75,11 +80,18 @@ class UserController extends BaseController{
                     return $this->showProfile();
                 }
 
+                // TODO: MANEJAR LOS ERRORES DE LAS OPERACIONES CON LA BD, RETORNAR VISTA ERROR 500 SI LAS OPERACIONES DEVUELVEN FALSO
+
                 if(empty($password)){ // If the passwod is empty, then real password doesn't have to change, only the email
 
                     $user = User::selectOne($_SESSION["id_user"]);
-                    //dd($user->update(["email" => $email]));
-                    $this->sendMessageOperation("Tu correo se ha actualizado correctamente");
+                    
+                    if($user){
+                        $this->sendMessageOperation("Tu correo se ha actualizado correctamente");
+                    }else{
+                        $this->sendMessageOperation("Hubo un error al intentar actualizar el correo, por favor inténtalo de nuevo o más tarde");
+                    }
+
                     return $this->showProfile();
 
                 }else{

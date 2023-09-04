@@ -15,7 +15,7 @@ class QueryBuilder{
     */
     public function createOne(string $table_name, Array $properties) : bool{
 
-        $result = null;
+        $result = false;
         $fields = implode(", ", array_keys($properties));
         $values = array_values($properties);
         $wildcards = implode(", ", array_fill(0, count($properties), "?"));        
@@ -35,7 +35,7 @@ class QueryBuilder{
      * @param string $table_name It's to define the name of the table in the query     
      * This function does the query to return all of the record in a table (SELECT *)
     */
-    public function selectAll(string $table_name): Array | null{
+    public function selectAll(string $table_name): Array | bool{
 
         $result = null;
         
@@ -46,7 +46,7 @@ class QueryBuilder{
             $query->closeCursor(); // ! Close the cursor
         } catch (PDOException $error) {
             echo $error;
-            $result = null;
+            $result = false;
         }
         
         return $result;
