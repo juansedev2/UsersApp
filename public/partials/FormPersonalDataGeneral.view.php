@@ -16,8 +16,8 @@
             <?php require_once "./public/partials/IdentificationTypesList.view.php"?>
             <option value="<?=$user["identification_type"]?>" selected="true" disabled>Registrado: <?=$user["identification_name"]?></option>
         </select>
-        <label for="number_document">Número de documento</label>
-        <input type="number" name="number_document" id="number_document" value="<?=$user["identification_number"]?>" disabled>
+        <label for="document_number">Número de documento</label>
+        <input type="number" name="document_number" id="document_number" value="<?=$user["identification_number"]?>" disabled>
         <label for="email">Correo</label>
         <input type="email" name="email" id="email" value="<?=$user["email"]?>">
         <label for="password">Contraseña</label>
