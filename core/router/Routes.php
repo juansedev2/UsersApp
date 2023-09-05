@@ -11,6 +11,8 @@ return [
     "perfil" => ["UserController", "showProfile"],
     "actualizar-perfil" => ["UserController", "updateUserProfile"],
     "administrar" => ["UserController", "showUserManager"],
+    "crear-usuario-form" => ["UserController", "showcreateUser"],
+    "crear-usuario" => ["UserController", "createUser"],
     "404" => ["StaticController", "show404"],
     "500" => ["StaticController", "showInternalServerError"],
 ];
