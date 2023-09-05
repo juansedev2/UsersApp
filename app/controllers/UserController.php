@@ -217,12 +217,17 @@ class UserController extends BaseController{
 
     public function showUserManager(){
 
+        Authenticator::startSession();
+
         if(!$this->validateSession()){
             return $this->redirectToLogin();
         }
 
+        if($_SESSION["role_id"] != "1"){
+            return StaticController::returnView("403");
+        }
+
         $users = (new User)->selectAll();
-        Authenticator::startSession();
 
         // If the user is no the super admin, then he cannot view that super user to edit it
         if($_SESSION["id_user"] != 1){
