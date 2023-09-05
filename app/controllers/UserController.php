@@ -64,12 +64,12 @@ class UserController extends BaseController{
             case '1': // Case admin
 
                 $first_name = $_POST["first_name"];
-                $middle_name = $_POST["second_name"];
+                $middle_name = $_POST["middle_name"];
                 $last_name = $_POST["last_name"];
                 $age = $_POST["age"];
-                $document_type = $_POST["document_type"];
+                $identification_type = $_POST["identification_type"];
                 $email = $_POST["email"];
-                $document_number = $_POST["document_number"];
+                $identification_number = $_POST["identification_number"];
                 $password = $_POST["password"];
 
                 if(empty($first_name) or empty($middle_name) or empty($last_name)){
@@ -87,12 +87,12 @@ class UserController extends BaseController{
                     return $this->showProfile();
                 }
 
-                if(empty($document_type) or !is_numeric($document_type)){
+                if(empty($identification_type) or !is_numeric($identification_type)){
                     $this->sendMessageOperation("Tipo de documento no válido");
                     return $this->showProfile();
                 }
 
-                if(empty($document_number) or !is_numeric($document_type)){
+                if(empty($identification_number) or !is_numeric($identification_number)){
                     $this->sendMessageOperation("El número de documento no puede ser vacio");
                     return $this->showProfile();
                 }
@@ -113,8 +113,8 @@ class UserController extends BaseController{
                         "last_name" => $last_name,
                         "age" => $age,
                         "email" => $email,
-                        "identification_type" => $document_type,
-                        "identification_number" => $document_number,
+                        "identification_type" => $identification_type,
+                        "identification_number" => $identification_number,
                     ]);
                     
                     if($result){
@@ -139,8 +139,8 @@ class UserController extends BaseController{
                         "last_name" => $last_name,
                         "age" => $age,
                         "email" => $email,
-                        "identification_type" => $document_type,
-                        "identification_number" => $document_number,
+                        "identification_type" => $identification_type,
+                        "identification_number" => $identification_number,
                         "password" => Encryptor::encryptPassword($password)
                     ]);
 
