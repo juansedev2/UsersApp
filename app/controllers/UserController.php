@@ -240,6 +240,17 @@ class UserController extends BaseController{
 
     }
 
+    public function showcreateUser(){
+
+        if(!$this->validateSession()){
+            return $this->redirectToLogin();
+        }
+        $identification_types = (new IdentificationType)->selectAll();
+        $this->returnView("CreateUser", [
+            "identification_types" => $identification_types
+        ]);
+    }
+
     private function validateRol(){
         Authenticator::startSession();
         return $_SESSION["role_id"];
@@ -271,6 +282,4 @@ class UserController extends BaseController{
     public static function getAlert(): string {
         return self::$message_operation;
     }
-
-
 }
