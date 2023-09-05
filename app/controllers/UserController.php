@@ -62,10 +62,97 @@ class UserController extends BaseController{
         switch ($this->validateRol()) {
             
             case '1': // Case admin
-                $name = $_POST["ssss"];
+
+                $first_name = $_POST["first_name"];
+                $middle_name = $_POST["second_name"];
+                $last_name = $_POST["last_name"];
+                $age = $_POST["age"];
+                $document_type = $_POST["document_type"];
                 $email = $_POST["email"];
+                $document_number = $_POST["document_number"];
                 $password = $_POST["password"];
-                dd("Administrador");
+
+                if(empty($first_name) or empty($middle_name) or empty($last_name)){
+                    $this->sendMessageOperation("Nombres y/o apellidos incompletos");
+                    return $this->showProfile();
+                }
+
+                if(!FormValidator::EmailValidator($email)){
+                    $this->sendMessageOperation("Formato de correo electrónico no válido");
+                    return $this->showProfile();
+                }
+
+                if(empty($age) or $age > 200){
+                    $this->sendMessageOperation("Edad vacía o formato incorrecto");
+                    return $this->showProfile();
+                }
+
+                if(empty($document_type) or !is_numeric($document_type)){
+                    $this->sendMessageOperation("Tipo de documento no válido");
+                    return $this->showProfile();
+                }
+
+                if(empty($document_number) or !is_numeric($document_type)){
+                    $this->sendMessageOperation("El número de documento no puede ser vacio");
+                    return $this->showProfile();
+                }
+
+                if(!FormValidator::EmailValidator($email)){
+                    $this->sendMessageOperation("Formato de correo electrónico no válido");
+                    return $this->showProfile();
+                }
+
+                // In the case of the admin, he can update all of his information
+
+                if(empty($password)){ // If the passwod is empty, then real password doesn't have to change, only the email
+
+                    $user = User::selectOne($_SESSION["id_user"]);
+                    $result = $user->update([
+                        "first_name" => $first_name,
+                        "middle_name" => $middle_name,
+                        "last_name" => $last_name,
+                        "age" => $age,
+                        "email" => $email,
+                        "identification_type" => $document_type,
+                        "identification_number" => $document_number,
+                    ]);
+                    
+                    if($result){
+                        $this->sendMessageOperation("Tu información se ha actualizado correctamente");
+                    }else{
+                        $this->sendMessageOperation("Hubo un error al intentar actualizar la información, por favor inténtalo de nuevo o más tarde");
+                    }
+
+                    return $this->showProfile();
+
+                }else{
+
+                    if(!FormValidator::PasswordValidator($password)){
+                        $this->sendMessageOperation("La contraseña debe contener mayúsculas minúsculas, números y caracteres especiales, mínimo 8 caracteres");
+                        return $this->showProfile();
+                    }
+
+                    $user = User::selectOne($_SESSION["id_user"]);
+                    $result = $user->update([
+                        "first_name" => $first_name,
+                        "middle_name" => $middle_name,
+                        "last_name" => $last_name,
+                        "age" => $age,
+                        "email" => $email,
+                        "identification_type" => $document_type,
+                        "identification_number" => $document_number,
+                        "password" => Encryptor::encryptPassword($password)
+                    ]);
+
+                    if($result){
+                        $this->sendMessageOperation("Tu información se ha actualizado correctamente");
+                    }else{
+                        $this->sendMessageOperation("Hubo un error al intentar actualizar la información, por favor inténtalo de nuevo o más tarde");
+                    }
+                    $this->showProfile();
+
+                }
+                
             break;
 
             case '2': // Case general
@@ -85,8 +172,11 @@ class UserController extends BaseController{
                 if(empty($password)){ // If the passwod is empty, then real password doesn't have to change, only the email
 
                     $user = User::selectOne($_SESSION["id_user"]);
+                    $result =$user->update([
+                        "email" => $email
+                    ]);
                     
-                    if($user){
+                    if($result){
                         $this->sendMessageOperation("Tu correo se ha actualizado correctamente");
                     }else{
                         $this->sendMessageOperation("Hubo un error al intentar actualizar el correo, por favor inténtalo de nuevo o más tarde");
@@ -102,12 +192,17 @@ class UserController extends BaseController{
                     }
 
                     $user = User::selectOne($_SESSION["id_user"]);
-                    $user->update([
+                    $result = $user->update([
                         "email" => $email,
                         "password" => Encryptor::encryptPassword($password)
                     ]);
 
-                    $this->sendMessageOperation("Tu correo y contraseña se han actualizado correctamente");
+                    if($result){
+                        $this->sendMessageOperation("Tu correo y contraseña se han actualizado correctamente");
+                    }else{
+                        $this->sendMessageOperation("Hubo un error al intentar actualizar los datos, por favor inténtalo de nuevo o más tarde");
+                    }
+
                     $this->showProfile();
 
                 }
