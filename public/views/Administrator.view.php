@@ -24,7 +24,7 @@
             </div>
             <div class="section_options">
                 <img src="/public/assets/icons/+.ico" alt="Imagen no encontrada" width="150px">
-                <a href="crear-usuario">Crear usuario</a>
+                <a href="crear-usuario-form">Crear usuario</a>
             </div>
             <div class="section_options">
                 <img src="/public/assets/img/Exit.jpg" alt="Imagen no encontrada" width="150px">
