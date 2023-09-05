@@ -23,6 +23,10 @@
                 <a href="administrar">Administrar usuarios</a>
             </div>
             <div class="section_options">
+                <img src="/public/assets/icons/+.ico" alt="Imagen no encontrada" width="150px">
+                <a href="crear-usuario">Crear usuario</a>
+            </div>
+            <div class="section_options">
                 <img src="/public/assets/img/Exit.jpg" alt="Imagen no encontrada" width="150px">
                 <a href="salir">Salir</a>
             </div>
