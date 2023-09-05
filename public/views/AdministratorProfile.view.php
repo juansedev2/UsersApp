@@ -13,6 +13,7 @@
     <?php include_once "./public/partials/NavProfileUser.html"?>
     <section id="section_profile_tittle">
         <h1>Administrador/a: <?=$_SESSION["name"]?></h1>
+        <?php include_once "./public/partials/AlertUpdateProfile.view.php"?>
     </section>
     <section id="section_profile_data">
         <?php include_once "./public/partials/FormPersonalDataAdmin.view.php"?>

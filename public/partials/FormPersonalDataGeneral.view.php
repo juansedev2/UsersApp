@@ -9,7 +9,7 @@
         <input type="text" id="last_name" name="last_name" value="<?=$user["last_name"]?>" disabled>
         <div>
             <label for="age">Edad</label>
-            <input type="number" value="<?=$user["age"]?>" disabled>
+            <input type="number" value="<?=$user["age"]?>" name="age" disabled>
         </div>
         <label for="document_type">Tipo de documento</label>
         <select name="document_type" id="document_type" disabled>
