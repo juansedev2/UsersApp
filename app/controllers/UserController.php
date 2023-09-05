@@ -19,7 +19,7 @@ class UserController extends BaseController{
     public function showProfile(){
 
         if(!$this->validateSession()){
-            return $this->redirectToMenu();
+            return $this->redirectToLogin();
         }
 
         Authenticator::startSession();
@@ -56,7 +56,7 @@ class UserController extends BaseController{
     public function updateUserProfile(){
 
         if(!$this->validateSession()){
-            return $this->redirectToMenu();
+            return $this->redirectToLogin();
         }
         
         switch ($this->validateRol()) {
@@ -215,6 +215,14 @@ class UserController extends BaseController{
         }
     }
 
+    public function shoUserManager(){
+
+        if(!$this->validateSession()){
+            return $this->redirectToLogin();
+        }
+
+    }
+
     private function validateRol(){
         Authenticator::startSession();
         return $_SESSION["role_id"];
@@ -224,7 +232,7 @@ class UserController extends BaseController{
         return SessionController::validateSession();
     }
 
-    private function redirectToMenu(){
+    private function redirectToLogin(){
         Authenticator::returnSessionError();
         return self::redirect("login");
     }
