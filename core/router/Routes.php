@@ -10,6 +10,7 @@ return [
     "salir" => ["SessionController", "closeSession"],
     "perfil" => ["UserController", "showProfile"],
     "actualizar-perfil" => ["UserController", "updateUserProfile"],
+    "administrar" => ["UserController", "showAdministration"],
     "404" => ["StaticController", "show404"],
     "500" => ["StaticController", "showInternalServerError"],
 ];
