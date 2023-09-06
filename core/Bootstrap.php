@@ -11,6 +11,7 @@ require_once "./core/helpers/FormValidator.php";
 require_once "./core/security/Encryptor.php";
 require_once "./app/models/Model.php";
 require_once "./app/models/User.php";
+require_once "./app/models/Role.php";
 require_once "./app/models/IdentificationType.php";
 require_once "./app/controllers/BaseController.php";
 require_once "./app/controllers/StaticController.php";

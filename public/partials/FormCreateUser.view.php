@@ -11,6 +11,10 @@
                 <label for="age">Edad</label>
                 <input type="number">
             </div>
+            <label for="role">Rol del usuario</label>
+            <select name="role" id="role">
+                <?php require_once "./public/partials/RoleList.view.php"?>
+            </select>
             <label for="identification_type">Tipo de documento</label>
             <select name="identification_type" id="identification_type">
                 <?php require_once "./public/partials/IdentificationTypesList.view.php"?>

@@ -245,11 +245,24 @@ class UserController extends BaseController{
         if(!$this->validateSession()){
             return $this->redirectToLogin();
         }
+
         $identification_types = (new IdentificationType)->selectAll();
+        $role_list = (new Role)->selectAll();
+        
+        if(!$identification_types or !$role_list){
+            return $this->redirect("500");
+        }
+
         $this->returnView("CreateUser", [
-            "identification_types" => $identification_types
+            "identification_types" => $identification_types,
+            "role_list" => $role_list
         ]);
     }
+
+    public function createUser(){
+        
+    }
+
 
     private function validateRol(){
         Authenticator::startSession();
