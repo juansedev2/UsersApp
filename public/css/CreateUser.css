@@ -37,9 +37,9 @@ div button{
     padding: 10px;
     font-size: 1.2rem;
 }
-section#section_alert_tittle{
+section{
     text-align: center;
 }
-section#section_alert_tittle h2{
+section h2{
     margin: 20px 0;
 }

@@ -260,7 +260,63 @@ class UserController extends BaseController{
     }
 
     public function createUser(){
-        
+
+        $first_name = $_POST["first_name"];
+        $middle_name = $_POST["middle_name"];
+        $last_name = $_POST["last_name"];
+        $age = $_POST["age"];
+        $role = $_POST["role"];
+        $identification_type = $_POST["identification_type"];
+        $email = $_POST["email"];
+        $identification_number = $_POST["identification_number"];
+        $password = $_POST["password"];
+        $r_password = $_POST["r-password"];
+
+        if(empty($first_name) or empty($middle_name) or empty($last_name)){
+            $this->sendMessageOperation("Nombres y/o apellidos incompletos");
+            return $this->showcreateUser();
+        }
+
+        if(!FormValidator::EmailValidator($email)){
+            $this->sendMessageOperation("Formato de correo electrónico no válido");
+            return $this->showcreateUser();
+        }
+
+        if(empty($age) or $age > 200){
+            $this->sendMessageOperation("Edad vacía o formato incorrecto");
+            return $this->showcreateUser();
+        }
+
+        if(empty($role) or $role > 100 or !is_numeric($role)){
+            $this->sendMessageOperation("ROL NO VÁLIDO");
+            return $this->showcreateUser();
+        }
+
+        if(empty($identification_type) or !is_numeric($identification_type)){
+            $this->sendMessageOperation("Tipo de documento no válido");
+            return $this->showcreateUser();
+        }
+
+        if(empty($identification_number) or !is_numeric($identification_number)){
+            $this->sendMessageOperation("El número de documento no puede ser vacio");
+            return $this->showcreateUser();
+        }
+
+        if(!FormValidator::EmailValidator($email)){
+            $this->sendMessageOperation("Formato de correo electrónico no válido");
+            return $this->showcreateUser();
+        }
+
+        if(!FormValidator::PasswordValidator($password)){
+            $this->sendMessageOperation("La contraseña debe contener mayúsculas minúsculas, números y caracteres especiales, mínimo 8 caracteres");
+            return $this->showcreateUser();
+        }
+
+        if(!$password === $r_password){
+            $this->sendMessageOperation("Las contraseñas no coinciden");
+            return $this->showcreateUser();
+        }
+
     }
 
 

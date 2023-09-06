@@ -13,6 +13,9 @@
     <?php include_once "./public/partials/NavProfileUser.html"?>
     <section id="tittle">
         <h1>Crear ususario</h1>
+        <?php if(UserController::isthereAlert()):?>
+            <h2><?=UserController::getAlert()?></h2>
+        <?php endif;?>
     </section>
     <main id="section_form">
         <?php require_once "./public/partials/FormCreateUser.view.php"?>

@@ -9,7 +9,7 @@
             <input type="text" id="last_name" name="last_name">
             <div>
                 <label for="age">Edad</label>
-                <input type="number">
+                <input type="number" name="age" id="age">
             </div>
             <label for="role">Rol del usuario</label>
             <select name="role" id="role">
