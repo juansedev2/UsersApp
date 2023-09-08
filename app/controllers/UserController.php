@@ -305,6 +305,10 @@ class UserController extends BaseController{
         if(!FormValidator::EmailValidator($email)){
             $this->sendMessageOperation("Formato de correo electrónico no válido");
             return $this->showcreateUser();
+        }else if((new User)->queryUserByEmail($email)){
+            // Also its necessary to valiate that these email doesn't exist on the system (repeated)
+            $this->sendMessageOperation("Esa dirección de correo electrónico ya está en uso");
+            return $this->showcreateUser();
         }
 
         if(!FormValidator::PasswordValidator($password)){
@@ -312,7 +316,7 @@ class UserController extends BaseController{
             return $this->showcreateUser();
         }
 
-        if(!$password === $r_password){
+        if($password !== $r_password){
             $this->sendMessageOperation("Las contraseñas no coinciden");
             return $this->showcreateUser();
         }
