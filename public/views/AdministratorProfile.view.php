@@ -18,5 +18,6 @@
     <section id="section_profile_data">
         <?php include_once "./public/partials/FormPersonalDataAdmin.view.php"?>
     </section>
+    <script src="/public/js/ProfileAdminUser.js"></script>
 </body>
 </html>
