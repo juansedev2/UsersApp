@@ -31,7 +31,7 @@
                         <td><?=$user->properties["id"]?></td>
                         <td><?=$user->properties["first_name"]. " " . $user->properties["middle_name"] . " " . $user->properties["last_name"]?></td>
                         <td>
-                            <form action="consultar-usuario" method="post">
+                            <form action="consultar-usuario-form" method="post">
                                 <input type="number" name="id_user" value="<?=$user->properties["id"]?>" hidden>
                                 <button class="button eye">
                                     <img src="/public/assets/icons/eye.ico" alt="Icono de visualizar no encontrado" class="icon">
@@ -39,7 +39,7 @@
                             </form>
                         </td>
                         <td>
-                            <form action="editar-usuario" method="post">
+                            <form action="editar-usuario-form" method="post">
                                 <input type="number" name="id_user" value="<?=$user->properties["id"]?>" hidden>
                                 <button class="button pencil">
                                     <img src="/public/assets/icons/pencil.ico" alt="Icono de editar no encontrado" class="icon">

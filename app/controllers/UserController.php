@@ -346,7 +346,7 @@ class UserController extends BaseController{
 
     }
 
-    public function queryUser(){
+    public function showQueryUser(){
 
         $this->validatePermission();
         
@@ -372,6 +372,145 @@ class UserController extends BaseController{
         }else{
             return $this->redirect("500");
         }
+    }
+
+    public function showEditUser(){
+
+        $this->validatePermission();
+        
+        $id = $_POST["id_user"];
+        $user = User::selectOne($id);
+            
+        if($user){
+
+            $identification_types = (new IdentificationType)->selectAll();
+            $role_list = (new Role)->selectAll();
+            $user->addTypeIdentificationName($identification_types);
+            $user->addTypeOfRole($role_list);
+            
+            return $this->returnView(
+                "FullProfileUserEdit",
+                [
+                    "user" => $user->properties,
+                    "identification_types" => $identification_types,
+                    "role_list" => $role_list
+                ]
+            );
+
+        }else{
+            return $this->redirect("500");
+        }
+    }
+
+    public function editUser(){
+
+        $this->validatePermission();
+
+        $id_user = $_POST["id_user"];
+        $first_name = $_POST["first_name"];
+        $middle_name = $_POST["middle_name"];
+        $last_name = $_POST["last_name"];
+        $age = $_POST["age"];
+        $role = $_POST["role_id"];
+        $identification_type = $_POST["identification_type"];
+        $email = $_POST["email"];
+        $identification_number = $_POST["identification_number"];
+        $password = $_POST["password"];
+        $r_password = $_POST["r-password"];
+
+        if(empty($id_user)){
+            $this->sendMessageOperation("Un error en la actualización, por favor intentar más tarde..");
+            return $this->showEditUser();
+        }
+
+        if(empty($first_name) or empty($last_name)){
+            $this->sendMessageOperation("Nombres y/o apellidos incompletos");
+            return $this->showEditUser();
+        }
+
+        if(!FormValidator::EmailValidator($email)){
+            $this->sendMessageOperation("Formato de correo electrónico no válido");
+            return $this->showEditUser();
+        }
+
+        if(empty($age) or $age > 200){
+            $this->sendMessageOperation("Edad vacía o formato incorrecto");
+            return $this->showEditUser();
+        }
+
+        if(empty($role) or $role > 100 or !is_numeric($role)){
+            $this->sendMessageOperation("ROL NO VÁLIDO");
+            return $this->showEditUser();
+        }
+
+        if(empty($identification_type) or !is_numeric($identification_type)){
+            $this->sendMessageOperation("Tipo de documento no válido");
+            return $this->showcreateUser();
+        }
+
+        if(empty($identification_number) or !is_numeric($identification_number)){
+            $this->sendMessageOperation("El número de documento no puede ser vacio");
+            return $this->showEditUser();
+        }
+
+        if(!FormValidator::EmailValidator($email)){
+            $this->sendMessageOperation("Formato de correo electrónico no válido");
+            return $this->showEditUser();
+        }
+
+        // Then all of the data is filled, create the new user
+        if(empty($middle_name)){
+            $middle_name = null;
+        }
+
+        $user = User::selectOne($id_user);
+        $result = null;
+
+        if(empty($password)){
+
+            $result = $user->update([
+                "first_name" => $first_name,
+                "middle_name" => $middle_name,
+                "last_name" => $last_name,
+                "age" => $age,
+                "role_id" => $role,
+                "identification_type" => $identification_type,
+                "email" => $email,
+                "identification_number" => $identification_number,
+            ]);
+
+        }else{
+
+            if(!FormValidator::PasswordValidator($password)){
+                $this->sendMessageOperation("La contraseña debe contener mayúsculas minúsculas, números y caracteres especiales, mínimo 8 caracteres");
+                return $this->showEditUser();
+            }
+
+            if($password !== $r_password){
+                $this->sendMessageOperation("Las contraseñas no coinciden");
+                return $this->showEditUser();
+            }
+            
+            $result =$user->update([
+                "first_name" => $first_name,
+                "middle_name" => $middle_name,
+                "last_name" => $last_name,
+                "age" => $age,
+                "role_id" => $role,
+                "identification_type" => $identification_type,
+                "email" => $email,
+                "identification_number" => $identification_number,
+                "password" => Encryptor::encryptPassword($password)
+            ]);
+        }
+
+        if($result){
+            $this->sendMessageOperation("El usuario se ha actulizado correctamente");   
+        }else{
+            $this->sendMessageOperation("Hubo un error al momento de actualizar el usuario, inténtalo de nuevo o comunícate con soporte");   
+        }
+        return $this->showEditUser();
+        
     }
 
 
