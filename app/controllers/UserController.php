@@ -272,7 +272,8 @@ class UserController extends BaseController{
         $password = $_POST["password"];
         $r_password = $_POST["r-password"];
 
-        if(empty($first_name) or empty($middle_name) or empty($last_name)){
+        // Minimum the user should have his first name and the last name
+        if(empty($first_name) or empty($last_name)){
             $this->sendMessageOperation("Nombres y/o apellidos incompletos");
             return $this->showcreateUser();
         }
@@ -320,6 +321,30 @@ class UserController extends BaseController{
             $this->sendMessageOperation("Las contraseñas no coinciden");
             return $this->showcreateUser();
         }
+
+        // Then all of the data is filled, create the new user
+        if(empty($middle_name)){
+            $middle_name = null;
+        }
+
+        $result = User::create([
+            "first_name" => $first_name,
+            "middle_name" => $middle_name,
+            "last_name" => $last_name,
+            "age" => $age,
+            "role_id" => $role,
+            "identification_type" => $identification_type,
+            "email" => $email,
+            "identification_number" => $identification_number,
+            "password" => Encryptor::encryptPassword($password)
+        ]);
+
+        if($result){
+            $this->sendMessageOperation("El usuario {$first_name} {$middle_name} - {$email} ha sido creado exitósamente");   
+        }else{
+            $this->sendMessageOperation("Hubo un error al momento de crear el usuario, inténtalo de nuevo o comunícate con soporte");   
+        }
+        return $this->showcreateUser();
 
     }
 
