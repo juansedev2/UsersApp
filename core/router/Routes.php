@@ -13,6 +13,9 @@ return [
     "administrar" => ["UserController", "showUserManager"],
     "crear-usuario-form" => ["UserController", "showcreateUser"],
     "crear-usuario" => ["UserController", "createUser"],
+    "consultar-usuario" => ["UserController", "editUser"],
+    "editar-usuario" => ["UserController", "updateUser"],
+    "eliminar-usuario" => ["UserController", "deleteUser"],
     "404" => ["StaticController", "show404"],
     "500" => ["StaticController", "showInternalServerError"],
 ];
