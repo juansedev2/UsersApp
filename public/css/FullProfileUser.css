@@ -1,0 +1,45 @@
+section#tittle{
+    text-align: center;
+    margin: 30px auto;
+    height: auto;
+}
+fieldset{
+    padding: 50px;
+    width: 50%;
+    margin: 10px auto;
+}
+legend{
+    text-align: center;
+    font-size: 1.5rem;
+}
+form input[type="text"], input[type="number"], input[type="password"], input[type="email"]{
+    width: 100%;
+    font-size: 1.4rem;
+    margin: 10px 0;
+}
+form label{
+    display: inline-block;
+    margin: 10px 0;
+    font-size: 1.3rem;
+}
+form select{
+    display: block;
+    font-size: 1.2rem;
+
+}
+div.button{
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+div button{
+    margin: 30px 35px 5px;
+    padding: 10px;
+    font-size: 1.2rem;
+}
+section{
+    text-align: center;
+}
+section h2{
+    margin: 20px 0;
+}
