@@ -347,8 +347,31 @@ class UserController extends BaseController{
     }
 
     public function queryUser(){
+
+        $this->validatePermission();
+        
         $id = $_POST["id_user"];
-        dd($id);
+        $user = User::selectOne($id);
+            
+        if($user){
+
+            $identification_types = (new IdentificationType)->selectAll();
+            $role_list = (new Role)->selectAll();
+            $user->addTypeIdentificationName($identification_types);
+            $user->addTypeOfRole($role_list);
+            //dd($role_list);
+            
+            return $this->returnView(
+                "FullProfileUser",
+                [
+                    "user" => $user->properties,
+                    "identification_types" => $identification_types,
+                    "role_list" => $role_list
+                ]
+            );
+        }else{
+            return $this->redirect("500");
+        }
     }
 
 

@@ -48,5 +48,24 @@ class User extends Model{
         }
     }
 
+    /**
+     * This function add the name of the role name according to the id of this, it's necessary
+     * only if the model need it
+    */
+    public function addTypeOfRole(Array $role_types){
+
+        // According to the identification_type of the object User, then match with the $identification_types to bind his values (id and name)
+        if($this->properties["role_id"] < 1){
+            $this->properties["role_name"] = "ERROR DE ROL";
+        }else{
+            // It'll match the id of the identification_type of the user and the id of the identification_type of the table, and the add his name
+            foreach ($role_types as $role_type) {
+                if($role_type->properties["id"] == $this->properties["role_id"]){
+                    return $this->properties["role_name"] = $role_type->properties["rol_name"];
+                }
+            }
+        }
+    }
+
 
 }
