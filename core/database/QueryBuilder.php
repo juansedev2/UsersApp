@@ -100,7 +100,7 @@ class QueryBuilder{
         $result = null;
 
         try {
-            $query = $this->connection->prepare("DELETE {$table_name} WHERE{$pk} = ?");
+            $query = $this->connection->prepare("DELETE FROM {$table_name} WHERE {$pk} = ?");
             $query->execute([$id]);
             $query->closeCursor();
             $result = true;

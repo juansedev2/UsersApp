@@ -491,7 +491,7 @@ class UserController extends BaseController{
                 return $this->showEditUser();
             }
             
-            $result =$user->update([
+            $result = $user->update([
                 "first_name" => $first_name,
                 "middle_name" => $middle_name,
                 "last_name" => $last_name,
@@ -511,6 +511,18 @@ class UserController extends BaseController{
         }
         return $this->showEditUser();
         
+    }
+
+    public function deleteUser(){
+
+        $this->validatePermission();
+        
+        $id = $_POST["id_user"];
+        $user = User::selectOne($id);
+        $result = $user->delete();
+
+        return $this->showUserManager();
+
     }
 
 
