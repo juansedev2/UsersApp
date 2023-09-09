@@ -20,8 +20,10 @@
         <input type="number" name="identification_number" id="identification_number" value="<?=$user["identification_number"]?>">
         <label for="email">Correo</label>
         <input type="email" name="email" id="email" value="<?=$user["email"]?>">
+        <div class="error_message_div" id="error_message_email"></div>
         <label for="password">Contraseña</label>
         <input type="password" name="password" id="password" placeholder="Escriba una nueva contraseña si la quiere actualizar">
+        <div class="error_message_div" id="error_message_password"></div>
         <div class="buttons">
             <button id="question_button" type="button">¿Cómo actualizar datos?</button>
             <button id="update_button" type="submit">Actualizar datos</button>
