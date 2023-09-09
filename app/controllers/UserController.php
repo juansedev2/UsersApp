@@ -346,6 +346,10 @@ class UserController extends BaseController{
 
     }
 
+    public function queryUser(){
+        dd("OK...");
+    }
+
 
     private function validateRol(){
         Authenticator::startSession();
@@ -377,5 +381,18 @@ class UserController extends BaseController{
 
     public static function getAlert(): string {
         return self::$message_operation;
+    }
+
+    private function validatePermission(){
+        
+        Authenticator::startSession();
+
+        if(!$this->validateSession()){
+            return $this->redirectToLogin();
+        }
+
+        if($_SESSION["role_id"] != "1"){
+            return StaticController::returnView("403");
+        }
     }
 }

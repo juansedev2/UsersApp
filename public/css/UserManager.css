@@ -32,3 +32,10 @@ table img.icon {
 table img.icon.trash {
     width: 60px;
 }
+button.button{
+    background: none;
+    border: none;
+}
+button.button:hover{
+    cursor: pointer;
+}
