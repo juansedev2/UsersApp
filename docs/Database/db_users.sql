@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-08-2023 a las 20:56:43
+-- Tiempo de generación: 08-09-2023 a las 21:49:21
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.1.12
 
@@ -24,47 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `roles`
---
-
-CREATE TABLE `roles` (
-  `id` int(11) NOT NULL,
-  `rol_name` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Volcado de datos para la tabla `roles`
---
-
-INSERT INTO `roles` (`id`, `rol_name`) VALUES
-(1, 'administrator'),
-(2, 'general');
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `type_identifications`
---
-
-CREATE TABLE `type_identifications` (
-  `id` int(11) NOT NULL,
-  `identification_name` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Volcado de datos para la tabla `type_identifications`
---
-
-INSERT INTO `type_identifications` (`id`, `identification_name`) VALUES
-(1, 'C.C'),
-(2, 'Tarjeta de identidad');
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `users`
 --
 
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `first_name` varchar(30) NOT NULL,
@@ -76,34 +39,24 @@ CREATE TABLE `users` (
   `identification_type` int(11) NOT NULL,
   `identification_number` varchar(20) NOT NULL,
   `role_id` int(11) NOT NULL,
-  `registred_on` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `update_on` timestamp NOT NULL DEFAULT current_timestamp()
+  `update_on` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `registred_on` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`id`, `first_name`, `middle_name`, `last_name`, `age`, `email`, `password`, `identification_type`, `identification_number`, `role_id`, `registred_on`, `update_on`) VALUES
-(1, 'rescueadmin@21', 'rescueadmin@21', 'rescueadmin@21', 100, 'rescueadmin@21@email.com', '$2y$11$zdBK8tWrxLR/EN4moWVXyuIWijoXJ8.7uYvueBqhBCaCyehOYfVpy', 1, '1111111111', 1, '2023-08-21 01:41:58', '2023-08-21 01:41:58'),
-(2, 'Juan', 'Sebastian', 'Arias', 21, 'jadmin2v@email.com', '$2y$11$Y.wlkaUdPN5BpVLuJiTsKOpDOUTcmjl8voXjFD8Z64elmb6LbD6.C', 1, '1234567890', 1, '2023-08-21 01:49:27', '2023-08-21 01:49:27'),
-(3, 'Marin', NULL, 'Kitagawa', 21, 'marinlove@email.com', '$2y$11$mTJ3wCYsNZzUHn47SvQH1ePgctilkY.T9HSTxC3oGNQ9erOFLKRXC', 1, '1275819203', 2, '2023-08-21 01:53:32', '2023-08-21 01:53:32');
+INSERT INTO `users` (`id`, `first_name`, `middle_name`, `last_name`, `age`, `email`, `password`, `identification_type`, `identification_number`, `role_id`, `update_on`, `registred_on`) VALUES
+(1, 'rescueadmin@21', 'rescueadmin@21', 'rescueadmin@21', 100, 'rescueadmin21@email.com', '$2y$11$zdBK8tWrxLR/EN4moWVXyuIWijoXJ8.7uYvueBqhBCaCyehOYfVpy', 1, '1111111111', 1, '2023-09-05 21:42:56', '2023-08-21 01:41:58'),
+(2, 'Juanito', 'Sebastian', 'Arias', 22, 'jadmin2v@email.com', '$2y$11$29TOvaffXtKDoPqrkpvIaOMe.LyRd/ulYB/pVhB3bgahJ.RREjMGW', 1, '1234567890', 1, '2023-09-09 02:32:12', '2023-08-21 01:49:27'),
+(3, 'Marin', NULL, 'Kitagawa', 21, 'marinlove@email.com', '$2y$11$i3CcyKj2ZKwcwB7SLXFDK.J3WIN5V0z4ZAXJ6xn0q4lK6iLXYWCSi', 1, '1275819203', 2, '2023-09-09 02:33:41', '2023-08-21 01:53:32'),
+(4, 'Ijiranaide', NULL, 'Nagatoro', 18, 'nagatoroxd@email.com', '$2y$11$LNHL6Yu5PTfXJ3EiJunSyuvNePFfFgGn8Nzze7HvSQb3aVFYVREqC', 1, '213867867', 2, '2023-09-09 00:17:09', '2023-09-09 00:17:09'),
+(5, 'Sasuke', NULL, 'Uchiha', 19, 'elsasukexd@email.com', '$2y$11$UtkWaxEDAjVDkqrtvm4/Ee2q4BZBKnt07oDDc.jnKoNncPmCtV18C', 1, '1234325411', 1, '2023-09-09 02:35:25', '2023-09-09 00:20:07');
 
 --
 -- Índices para tablas volcadas
 --
-
---
--- Indices de la tabla `roles`
---
-ALTER TABLE `roles`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `type_identifications`
---
-ALTER TABLE `type_identifications`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `users`
@@ -118,22 +71,10 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT de la tabla `roles`
---
-ALTER TABLE `roles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT de la tabla `type_identifications`
---
-ALTER TABLE `type_identifications`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restricciones para tablas volcadas
