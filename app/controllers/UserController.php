@@ -167,8 +167,6 @@ class UserController extends BaseController{
                     return $this->showProfile();
                 }
 
-                // TODO: MANEJAR LOS ERRORES DE LAS OPERACIONES CON LA BD, RETORNAR VISTA ERROR 500 SI LAS OPERACIONES DEVUELVEN FALSO
-
                 if(empty($password)){ // If the passwod is empty, then real password doesn't have to change, only the email
 
                     $user = User::selectOne($_SESSION["id_user"]);
