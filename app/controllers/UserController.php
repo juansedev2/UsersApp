@@ -347,7 +347,8 @@ class UserController extends BaseController{
     }
 
     public function queryUser(){
-        dd("OK...");
+        $id = $_POST["id_user"];
+        dd($id);
     }
 
 
