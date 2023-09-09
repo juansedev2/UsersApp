@@ -18,5 +18,6 @@
     <section id="section_profile_data">
         <?php include_once "./public/partials/FormPersonalDataGeneral.view.php"?>
     </section>
+    <script src="/public/js/ProfileGeneralUser.js"></script>
 </body>
 </html>
