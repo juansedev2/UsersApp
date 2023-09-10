@@ -20,5 +20,6 @@
     <main id="section_form">
         <?php require_once "./public/partials/FormCreateUser.view.php"?>
     </main>
+    <script src="/public/js/CreateUser.js"></script>
 </body>
 </html>
