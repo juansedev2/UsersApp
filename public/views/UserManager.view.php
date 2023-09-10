@@ -49,7 +49,7 @@
                         <td>
                             <form action="eliminar-usuario" method="post">
                                 <input type="number" name="id_user" value="<?=$user->properties["id"]?>" hidden>
-                                <button class="button pencil">
+                                <button class="button trash" id="button_trash" value="<?=$user->properties["id"]?>">
                                     <img src="/public/assets/icons/trash.ico" alt="Icono de eliminar no encontrado" class="icon">
                                 </button>
                             </form>
@@ -59,5 +59,6 @@
             </tbody>
         </table>
     </main>
+    <script src="/public/js/ManagerUser.js"></script>
 </body>
 </html>
