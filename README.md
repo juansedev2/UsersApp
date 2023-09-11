@@ -1,5 +1,25 @@
-#Aplicaci髇 de administraci髇 de usuarios
+# Documentaci贸n de r谩pida instalaci贸n
 
-Autor: Juansedev2
+## Aplicaci贸n: UsersApp
 
-*Comienzo del desarrollo de la aplicaci髇*
+### Autor: Juansedev2
+
+---
+
+Para usar la aplicaci贸n en entorno de desarrollo, clona el repositorio, luego puedes acceder a la misma a trav茅s del servidor local de PHP:
+
+- Accede v铆a terminal al directorio de la app en la ra铆z y utiliza el siguiente comando:
+
+```conf
+    php -S localhost:3000
+```
+
+- **Antes de continuar, descarga el archivo de backup de la base de datos ubicado en el directorio de docs y cargar en PHPMYADMIN el archivo y dado que es entorno de desarrollo, puedes dejar usuario root y contrase帽a vacia = ""**
+
+- A trav茅s de XAMPP, deja activado el servicio de Apache y MySQL (revisa la configuraci贸n de la aplicaci贸n si llegas a tener problemas de conexi贸n **core/conf/Config.php**)
+
+- Luego Accede al navegador web por esa misma direcci贸n y deber铆as ver la aplicaci贸n en funcionamiento
+
+Si lo que necesitas ver es un ejemplo de puesta en un servidor de producci贸n, por favor dir铆gete a la rama de producci贸n: **production**
+
+**Ante cualquier novedad que presentes o tengas alguna duda, puede enviarme un mensaje a infojuansedev2@gmail.com.**
