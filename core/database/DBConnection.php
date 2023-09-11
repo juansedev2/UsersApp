@@ -17,7 +17,7 @@ class DBConecction{
             return $pdo;
         } catch (\PDOException $error) {
             //echo "UPS, error al intentar conectarse a la base de datos por: {$error}";
-            //(new StaticController)->showInternalServerError();
+            (new StaticController)->showInternalServerError();
             return false;
         }
     }

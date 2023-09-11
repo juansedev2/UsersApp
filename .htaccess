@@ -1,0 +1,25 @@
+#Archivo de configuración para el servidor apache, este nombre es obligatorio en su formato: .htacess
+#Lo que hará Apache es leer primero este archivo antes de iniciar la aplicación y por lo tanto actuará en base a lo que se exprese acá
+#Nuesto objetivo por el momento es crear URLS amigables, por lo cual vamos a crear una configuración para ello:
+#www.ionos.com/digitalguide/hosting/technical-matters/what-is-a-rewrite-engine/
+
+#Esta instrucción indica que se encienda y se use el módulo mod_rewrite para crear reglas (órdenes de funcionamiento)
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_DIRECTORY} !-d
+#Para esconder la impresión de excepciones
+php_flag display_errors off
+
+<FilesMatch "\.(htaccess|htpasswd|ini|phps|fla|psd|log|sh)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+#Crea una regla con una regex que manifiesta que TODO lo que se ingrese via URL tendrá que ser redirigido primero al archivo
+#Index.php, eso que llegue tendrá que ser guardado en una variable que llamamos url (luego del query string) y $1 será una
+#variable que permitirá el acceso los valores en caché que se almacenan entre paréntesis
+#QSA: De una manera resumida, añade la cadena de la consulta a la URL que sustituye
+#L: Este flag indica last o último. Lo que hace es para el procesamiento de las reglas.
+#Por lo que si se cumplen todas las condiciones (RewriteCond), al llegar a esta regla de RewriteRule, se dejan de leer el resto de reglas.
+RewriteRule ^(.*)$ Index.php?url=$1 [L,QSA]
+#Luego explicaré la penúltima y antepenúltima

@@ -1,0 +1,21 @@
+On Xampp, add a Virtual host on httpd-vhosts.conf:
+On Windows: 
+Got to: C:\xampp\apache\conf\extra
+
+Add:
+<VirtualHost *:80>
+       DocumentRoot "C:/xampp/htdocs/"
+       ServerName localhost
+</VirtualHost>
+<VirtualHost *:80>
+       DocumentRoot "C:/xampp/htdocs/Curso_PHP/Proyectos/UsersApp"
+       ServerName appusers.test
+</VirtualHost>
+
+On Windows:
+
+How to admin, go to: C:\Windows\System32\drivers\etc
+Open hosts and add new localhost
+127.0.0.1 appusers.test
+
+And testing this
