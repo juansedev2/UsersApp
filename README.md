@@ -12,13 +12,15 @@ Para poder poner la aplicación en un entorno de producción como en el servidor
 
 1. Agregar un host virtual en el S.O vía hosts
 
-En Windows, se acceder al archivo de hosts, ubicado en el directorio: C:\Windows\System32\drivers\etc, **(Se debe acceder como administrador para editarlo y guardarlo)**, luego agregar un host local como por ejemplo:
+En Windows, se acceder al archivo de hosts, ubicado en el directorio: C:\Windows\System32\drivers\etc, **(Se debe acceder como administrador para editarlo y guardarlo, tampoco agregar host terminado en .com por conflicto de dominios)**, luego agregar un host local como por ejemplo:
 
 ```conf
     127.0.0.1 appusers.test
 ```
 
 1. Asegurarse que XAMPP esté instalado y funcionando correctamente, luego seguir los demás pasos:
+
+1. Cargar en SGBD PHPMYADMIN el archivo de backup de bases de datos compartido en el directorio de documentación, luego cargarlo en el SGBD y seguir con la configuración (si deseas agregar/configurar usuarios, puedes hacerlo, por defecto es root y contraseña vacia: ""), luego encender el servicio MySQL
 
 1. Configurar un virtual Host en el archivo httpd-vhosts.conf de la configuración de XAMPP
 
@@ -45,3 +47,5 @@ En Windows, se acceder al archivo de hosts, ubicado en el directorio: C:\Windows
 1. Si finalmente todo ha salido bien, se debería poder ver algo como esto en la URL y en pantalla al acceder:
 
 ![AppTestimg](https://github.com/juansedev2/UsersApp/blob/production/docs/Diagramas%20img/Test%20img/AppVHOST.PNG)
+
+**Ante cualquier novedad que presentes o tengas alguna duda, puede enviarme un mensaje a infojuansedev2@gmail.com.**
