@@ -20,7 +20,7 @@ En Windows, se acceder al archivo de hosts, ubicado en el directorio: C:\Windows
 
 1. Asegurarse que XAMPP esté instalado y funcionando correctamente, luego seguir los demás pasos:
 
-1. Cargar en SGBD PHPMYADMIN el archivo de backup de bases de datos compartido en el directorio de documentación, luego cargarlo en el SGBD y seguir con la configuración (si deseas agregar/configurar usuarios, puedes hacerlo, por defecto es root y contraseña vacia: ""), luego encender el servicio MySQL
+Cargar en SGBD PHPMYADMIN el archivo de backup de bases de datos compartido en el directorio de documentación, luego cargarlo en el SGBD y seguir con la configuración (si deseas agregar/configurar usuarios, puedes hacerlo, por defecto es root y contraseña vacia: ""), luego encender el servicio MySQL
 
 1. Configurar un virtual Host en el archivo httpd-vhosts.conf de la configuración de XAMPP
 
