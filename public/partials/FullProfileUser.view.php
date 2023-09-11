@@ -25,7 +25,7 @@
         <label for="email">Correo</label>
         <input type="email" name="email" id="email" value="<?=$user["email"]?>" disabled>
         <div class="button">
-            <button id="question_button" type="button">Regresar</button>
+            <button id="question_button" type="button" onclick="window.history.back();">Regresar</button>
         </div>
     </form>
 </fieldset>
