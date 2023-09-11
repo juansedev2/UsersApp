@@ -24,6 +24,8 @@ Cargar en SGBD PHPMYADMIN el archivo de backup de bases de datos compartido en e
 
 - Configurar un virtual Host en el archivo httpd-vhosts.conf de la configuración de XAMPP
 
+En este paso debes seleccionar el directorio donde alojaste la aplicación, la cual debes cargarla en el servidor, es decir desde el directorio del mismo: "C:/xampp/htdocs", luego acceder al archivo httpd-vhosts.conf que en Windows está en el direcotorio: C:\xampp\apache\conf\extra, editarlo y agregar un host virtual:
+
 ```conf
     <VirtualHost *:80>
         DocumentRoot "C:/xampp/htdocs/"
