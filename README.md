@@ -12,11 +12,15 @@ Para poder poner la aplicación en un entorno de producción como en el servidor
 
 1. Agregar un host virtual en el S.O vía hosts
 
+---
+
 En Windows, se acceder al archivo de hosts, ubicado en el directorio: C:\Windows\System32\drivers\etc, **(Se debe acceder como administrador para editarlo y guardarlo, tampoco agregar host terminado en .com por conflicto de dominios)**, luego agregar un host local como por ejemplo:
 
 ```conf
     127.0.0.1 appusers.test
 ```
+
+---
 
 1. Asegurarse que XAMPP esté instalado y funcionando correctamente, luego seguir los demás pasos:
 
