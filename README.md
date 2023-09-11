@@ -44,4 +44,4 @@ En Windows, se acceder al archivo de hosts, ubicado en el directorio: C:\Windows
 
 1. Si finalmente todo ha salido bien, se debería poder ver algo como esto en la URL y en pantalla al acceder:
 
-![App Test img](https://raw.githubusercontent.com/juansedev2/UsersApp/production/docs/Diagramas img/Test img/AppVHOST.PNG)
+![AppTestimg](https://github.com/juansedev2/UsersApp/blob/production/docs/Diagramas%20img/Test%20img/AppVHOST.PNG)
