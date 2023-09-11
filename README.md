@@ -6,6 +6,10 @@
 
 ---
 
+Es una aplicación de administración de usuarios, contempla el uso de roles, operaciones CRUD con ellos, sesiones, seguridad y validaciones.
+
+---
+
 Para usar la aplicación en entorno de desarrollo, clona el repositorio, luego puedes acceder a la misma a través del servidor local de PHP:
 
 - Accede vía terminal al directorio de la app en la raíz y utiliza el siguiente comando:
